@@ -73,6 +73,22 @@ body {
 	padding-left: 0px;
 }
 </style>
+<script>
+function makeOnlinePayment()
+{
+	$('#onlinePayment').show();
+	$('#OTPPayment').hide();
+	$("#liOnlinePayment").addClass("active");
+	$("#liOTPPayment").removeClass("active");
+}
+function makeOTPPayment()
+{
+	$('#onlinePayment').hide();
+	$('#OTPPayment').show();
+	$("#liOnlinePayment").removeClass("active");
+	$("#liOTPPayment").addClass("active");
+}
+</script>
 </head>
 <body>
 	<div class="container">
@@ -81,51 +97,80 @@ body {
 		</header>
 		<section id="main">
 			<div class="row">
-				<div class="col-md-6">
-					<h4>Select a Payment Method</h4>
+				<div class="col-lg-3">
+				</div>
+				<div class="col-lg-6">
+					<h4 style="text-align: center;">Select a Payment Method</h4>
 					<form:form name="paymentForm" action="createOrderByCC" method="POST">
-						<div class="row">
-							<div class="col-xs-20 col-md-8">
+						<div class="row">							
+							<div class="col-lg-12">
 								<div class="panel panel-default">
 									<div class="panel-heading">
 										<h3 class="panel-title">Payment Details</h3>
-										<div class="checkbox pull-right">
-											<label> <input type="checkbox" /> Remember
-											</label>
-										</div>
+										<!-- <div class="checkbox pull-right">-->
+											<!-- <label> <input type="checkbox"  /> Remember </label>-->											
+										<!-- </div>-->
 									</div>
 									<div class="panel-body">
+										<ul class="nav nav-tabs nav-justified">
+											<li id="liOnlinePayment" onclick="makeOnlinePayment()" role="presentation" class="active"><a href="#">Online payment</a></li>
+  											<li id="liOTPPayment" onclick="makeOTPPayment()" role="presentation"><a href="#">OTP payment</a></li>
+										</ul>
+										<br>
 										<form role="form">
-											<div class="form-group">
-												<label for="cardNumber"> CARD NUMBER</label>
-												<div class="input-group">
-													<input type="text" class="form-control"
-														id="creditCardNumber" name="creditCardNumber"
-														placeholder="Valid Card Number" required autofocus /> <span
-														class="input-group-addon"><span
-														class="glyphicon glyphicon-lock"></span></span>
+											<span class='payment-errors'></span>
+										      <!-- include two hidden fields -->
+										      <input type="hidden" data-mbills="amount" value="__amount__" />
+										      <input type="hidden" data-mbills="currency" value="__currency__" />
+										      <input type="hidden" data-mbills="sessiontoken" name="mbills[sessiontoken]" type="text">
+											<div id="onlinePayment">
+												<div class="form-group">
+													<!-- it was attribute name="creditCardNumber" -->
+													<label for="cardNumber"> PHONE NUMBER</label>
+													<div class="input-group">
+														<input type="text" class="form-control"
+															id="creditCardNumber" data-mbills="phonenumber"
+															name="creditCardNumber"
+															placeholder=" Phone number" required autofocus /> <span
+															class="input-group-addon"><span
+															class="glyphicon glyphicon-phone"></span></span>
+													</div>
+												</div>
+												<div class="form-group">
+													<!-- name="name" -->
+													<label for="cardNumber"> SECURITY CODE</label>
+													<div class="input-group">
+														<input type="text" class="form-control" id="name" data-mbills="securitycode"
+															 name="name" placeholder=" Security code" required autofocus />
+														<span class="input-group-addon"><span
+															class="glyphicon glyphicon-lock"></span></span>
+													</div>
 												</div>
 											</div>
-											<div class="form-group">
-												<label for="cardNumber"> NAME ON CARD</label>
-												<div class="input-group">
-													<input type="text" class="form-control" id="name"
-														name="name" placeholder="Name on Card" required autofocus />
-													<span class="input-group-addon"><span
-														class="glyphicon glyphicon-user"></span></span>
+											<!--<div style="display: none;" id="OTPPayment">
+												<div class="form-group">
+													<label for="cardNumber"> OTP</label>
+													<div class="input-group">
+														<input type="text" class="form-control"
+															id="OTPcreditCardNumber" data-mbills="phonenumber"
+															name="OTPcreditCardNumber"
+															placeholder=" password" required autofocus /> <span
+															class="input-group-addon"><span
+															class="glyphicon glyphicon-lock"></span></span>
+													</div>
 												</div>
-											</div>
-											<div class="row">
+											</div>-->
+											<div style="display:none;" class="row">
 												<div class="col-xs-7 col-md-7">
 													<div class="form-group">
 														<label for="expityMonth"> EXPIRY DATE</label>
 														<div class="col-xs-6 col-lg-6 pl-ziro">
 															<input type="text" class="form-control" id="expityMonth"
-																name="month" placeholder="MM" required />
+																name="month" value="08" placeholder="MM" required />
 														</div>
 														<div class="col-xs-6 col-lg-6 pl-ziro">
 															<input type="text" class="form-control" id="expityYear"
-																name="year" placeholder="YY" required />
+																name="year" value="18" placeholder="YY" required />
 														</div>
 													</div>
 												</div>
@@ -133,7 +178,7 @@ body {
 													<div class="form-group">
 														<label for="cvCode"> CV CODE</label> <input
 															type="password" class="form-control" id="cvCode"
-															name="cvvCode" placeholder="CV" required />
+															name="cvvCode" value="18" placeholder="CV" required />
 													</div>
 												</div>
 											</div>
@@ -150,6 +195,8 @@ body {
 							</div>
 						</div>
 					</form:form>
+				</div>
+				<div class="col-lg-3">
 				</div>
 			</div>
 		</section>
