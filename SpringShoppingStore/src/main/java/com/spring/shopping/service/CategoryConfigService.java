@@ -9,7 +9,7 @@ import com.spring.shopping.model.SubCategory;
 
 /**
  * 
- * @author Sai Upadhyayula Configuration Service for Categories in the
+ * Configuration Service for Categories in the
  *         application. Method Definitions for retrieving all the root and child
  *         categories.
  */

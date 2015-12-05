@@ -5,7 +5,6 @@ import java.util.UUID;
 /*********************************
  * This class is used to generate unique
  * and random keys. Used in Account Activation
- * @author SaiUpadhyayula
  *
  *******************************/
 public class KeyGenerator {

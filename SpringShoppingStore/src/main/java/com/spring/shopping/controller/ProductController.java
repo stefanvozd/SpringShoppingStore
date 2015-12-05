@@ -42,7 +42,6 @@ public class ProductController {
 	 * Product Controller method which retrieves the information required in the
 	 * product page
 	 * 
-	 * @author Sai Upadhyayula
 	 * 
 	 * @param Model
 	 * @param ProductId

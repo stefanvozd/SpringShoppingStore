@@ -16,7 +16,6 @@ import org.springframework.jdbc.core.RowCallbackHandler;
  * the mails are sent. We can also use this in conjunction with Properties
  * Files.
  * 
- * @author SaiUpadhyayula
  * 
  *****************************************************************************/
 public class MailPropertiesFactoryBeanRepository extends

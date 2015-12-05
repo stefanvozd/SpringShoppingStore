@@ -42,7 +42,6 @@ public class WishListController {
 	/**
 	 * Method to Add Products to the Wishlist
 	 * 
-	 * @author Sai Upadhyayula
 	 * 
 	 * 
 	 */
@@ -66,7 +65,6 @@ public class WishListController {
 	 * Adds the product to the Wishlist and then deletes the product from the
 	 * Shopping Cart.
 	 * 
-	 * @author Sai Upadhyayula
 	 * 
 	 * 
 	 */
@@ -92,7 +90,6 @@ public class WishListController {
 	 * Deletes the product From the Wishlist and then Add the product from the
 	 * Shopping Cart.
 	 * 
-	 * @author Sai Upadhyayula
 	 * 
 	 * 
 	 */
@@ -108,7 +105,6 @@ public class WishListController {
 	/**
 	 * Method to Remove Products from the Wishlist.
 	 * 
-	 * @author Sai Upadhyayula
 	 * 
 	 * 
 	 */

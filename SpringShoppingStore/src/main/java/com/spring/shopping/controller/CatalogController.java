@@ -24,7 +24,7 @@ import com.spring.shopping.service.CategoryConfigService;
 import com.spring.shopping.service.ProductConfigService;
 
 /**
- * @author Sai Upadhyayula Handles requests for the application home page.
+ *  Handles requests for the application home page.
  */
 @Controller
 public class CatalogController {
@@ -53,7 +53,6 @@ public class CatalogController {
 	 * Catalog Controller method which retrieves the information required in the
 	 * application home page(Categories,SubCategories,Featured Items)
 	 * 
-	 * @author Sai Upadhyayula
 	 * 
 	 * @param Model
 	 * @return Home Page View

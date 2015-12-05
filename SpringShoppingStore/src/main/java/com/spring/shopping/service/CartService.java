@@ -19,7 +19,6 @@ public class CartService {
 	 * This class is used to handle all the Shopping Cart Operations like
 	 * Add,Remove,Update the Items.
 	 * 
-	 * @author Sai Upadhyayula
 	 * 
 	 */
 	@Autowired

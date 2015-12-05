@@ -34,7 +34,6 @@ public class CartController {
 	 * Method to Add Products to the Shopping Cart First Check if the Product is
 	 * available in the Wishlist, if available, remove the product from Wishlist
 	 * 
-	 * @author Sai Upadhyayula
 	 * 
 	 * @param ProductID
 	 * @param HttpServletRequest
@@ -82,7 +81,6 @@ public class CartController {
 	 * Method to View the Items of Shopping Cart Retrieves the items to display
 	 * in the shopping cart page
 	 * 
-	 * @author SaiUpadhyayula
 	 * 
 	 * @param Model
 	 * @param ProductID
@@ -97,7 +95,6 @@ public class CartController {
 	/**
 	 * Method to Update the shopping cart page
 	 * 
-	 * @author Sai Upadhyayula
 	 * 
 	 * @param Model
 	 * @param ProductID
@@ -119,7 +116,6 @@ public class CartController {
 	/**
 	 * Method to Remove the Products from shopping cart
 	 * 
-	 * @author Sai Upadhyayula
 	 * 
 	 * @param Model
 	 * @param ProductID
@@ -139,7 +135,6 @@ public class CartController {
 	/**
 	 * Method to Clear the Products from shopping cart
 	 * 
-	 * @author Sai Upadhyayula
 	 * 
 	 * @param Model
 	 * @param ProductID
