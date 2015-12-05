@@ -9,5 +9,5 @@ public interface ProductConfigService {
 
 	Product getProductById(Long productId);
 	
-	public int saveNewProduct(Product product, Long categoryId, Long subcategoryId);
+	public long saveNewProduct(Product product, Long categoryId, Long subcategoryId);
 }

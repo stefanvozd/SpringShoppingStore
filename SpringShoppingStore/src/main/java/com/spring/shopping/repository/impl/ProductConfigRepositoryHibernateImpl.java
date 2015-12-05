@@ -27,7 +27,7 @@ public class ProductConfigRepositoryHibernateImpl implements
 	}
 
 	@Override
-	public int saveNewProduct(Product product, Long categoryId, Long subcategoryId){
+	public long saveNewProduct(Product product, Long categoryId, Long subcategoryId){
 		// TODO Auto-generated method stub
 		return 0;
 	}

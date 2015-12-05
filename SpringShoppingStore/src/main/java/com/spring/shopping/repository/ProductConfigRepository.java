@@ -12,7 +12,7 @@ public interface ProductConfigRepository {
 	
 	List<Product> readProductByCustomerId(Long customerId);
 	
-	public int saveNewProduct(Product product, Long categoryId, Long subcategoryId);
+	public long saveNewProduct(Product product, Long categoryId, Long subcategoryId);
 	
 
 }

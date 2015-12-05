@@ -34,7 +34,7 @@ public class ProductConfigServiceImpl implements ProductConfigService {
 	}
 
 	@Override
-	public int saveNewProduct(Product product, Long categoryId, Long subcategoryId) {
+	public long saveNewProduct(Product product, Long categoryId, Long subcategoryId) {
 		return productConfigRepository.saveNewProduct(product, categoryId, subcategoryId);
 	}
 

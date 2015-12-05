@@ -103,9 +103,10 @@ public class ProductController {
 		product.setCustomerId(customerId);
 		product.setFeatured(1);
 		product.setAvailable(1);
-		int saveNewProduct = productConfigurationService.saveNewProduct(product, product.getCategory_Id(), product.getSubCategory_Id());
-		model.addAttribute("successful", saveNewProduct == 1? "true": false);
-		model.addAttribute("messsage", "...");
+		long saveNewProduct = productConfigurationService.saveNewProduct(product, product.getCategory_Id(), product.getSubCategory_Id());
+		String successfull = saveNewProduct == 1? "true": "false";
+		model.addAttribute("successful", successfull);
+		model.addAttribute("messsage", saveNewProduct == 1? "Successfully saved product!" : "Error adding product!");
 		return "createProduct";
 	}
 	
