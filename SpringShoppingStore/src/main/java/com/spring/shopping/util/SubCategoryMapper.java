@@ -13,7 +13,7 @@ public class SubCategoryMapper implements RowMapper<SubCategory> {
 	public SubCategory mapRow(ResultSet rs, int rowNum) throws SQLException {
 		SubCategory subCategory = new SubCategory();
 		subCategory.setSubCategoryId(rs.getLong("SubCategory_Id"));
-		subCategory.setSubCategoryId(rs.getLong("Category_Id"));
+		subCategory.setCategoryId(rs.getLong("Category_Id"));
 		subCategory.setSubCategoryName(rs.getString("Name"));
 		return subCategory;
 	}

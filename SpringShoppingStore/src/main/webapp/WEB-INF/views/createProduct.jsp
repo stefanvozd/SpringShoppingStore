@@ -107,8 +107,28 @@ hr {
 <script src="resources/js/bootstrap-min.js"></script>
 <script src="resources/js/jquery-1.8.0.js"></script>
 <script>
-	$(document).ready(
-			function() {
+
+function changeDrop(){
+	
+		var catid=$("#Category_Id").val();
+		 $(document.getElementById('SubCategory_Id').options).each(function(index, option) {
+		     
+		        option.hidden = true; 
+		      
+		 });
+		 $(document.getElementById('SubCategory_Id').options).each(function(index, option) {
+		      if( option.id == catid ) {
+		        option.hidden = false; 
+		      }
+		 });
+	
+}
+
+	$(document).ready(function() {
+				changeDrop();
+				$("#Category_Id").click(changeDrop);
+				
+				
 				$(".dropdown").hover(
 						function() {
 							$('.dropdown-menu', this).not('.in .dropdown-menu')

@@ -39,7 +39,7 @@ public class CategoryConfigRepositoryJdbcImpl implements CategoryConfigRepositor
 
 	@Override
 	public List<SubCategory> readAllSubCategories() {
-		String sql = "SELECT * FROM category sc;";
+		String sql = "SELECT * FROM subcategory sc;";
 		List<SubCategory> subCategoryList = jdbcTemplate.query(sql,
 				new SubCategoryMapper());
 		return subCategoryList;

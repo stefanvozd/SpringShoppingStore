@@ -1,7 +1,7 @@
 package com.spring.shopping.model;
 
 public class SubCategory {
-
+	private Long CategoryId;
 	private Long subCategoryId;
 	private String subCategoryName;
 
@@ -9,6 +9,12 @@ public class SubCategory {
 		return subCategoryId;
 	}
 
+	public Long getCategoryId() {
+		return CategoryId;
+	}
+	public void setCategoryId(Long categoryId) {
+		CategoryId = categoryId;
+	}
 	public String getSubCategoryName() {
 		return subCategoryName;
 	}
