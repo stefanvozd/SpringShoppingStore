@@ -5,6 +5,7 @@ This project uses Spring MVC,Twitter Bootstrap, JDBC implementations.
 
 Features
 --------
+CAO DRYGARI	
 
 Managing the Catalog of Products,Categories and Subcategories
 
