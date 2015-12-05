@@ -3,7 +3,7 @@
 
 <div class="col-md-6">
 	<h2 id="addressTitle">Add new Product Form</h2>
-	<form:form commandName="productFormm" id="productFormm"
+	<form:form name="Product" commandName="Product" id="Product"
 		class="form-horizontal" action="createnewproduct" method="POST">
 		
 		<div class="form-group">
