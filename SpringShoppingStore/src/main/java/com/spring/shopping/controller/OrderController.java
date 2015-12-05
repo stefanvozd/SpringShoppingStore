@@ -97,4 +97,16 @@ public class OrderController {
 		cartService.clearCart(cartData);
 		return "order";
 	}
+	
+	
+	@RequestMapping(value = "/sellHistory", method = RequestMethod.GET)
+	public String getSellHistory(Model model, HttpServletRequest request) {
+		Long productId = SessionUtils.getSessionVariables(request, "productId");
+		
+//		List<Product> productsList = orderService.getAllOrderItems(order);
+		return null;
+		
+	}
+
+	
 }

@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.spring.shopping.controller.constants.ControllerConstants;
 import com.spring.shopping.model.Category;
 import com.spring.shopping.model.Customer;
+import com.spring.shopping.model.Order;
 import com.spring.shopping.model.Product;
 import com.spring.shopping.model.ReviewForm;
 import com.spring.shopping.model.SubCategory;
@@ -104,11 +105,24 @@ public class ProductController {
 		product.setFeatured(1);
 		product.setAvailable(1);
 		long saveNewProduct = productConfigurationService.saveNewProduct(product, product.getCategory_Id(), product.getSubCategory_Id());
-		String successfull = saveNewProduct == 1? "true": "false";
-		model.addAttribute("successful", successfull);
-		model.addAttribute("messsage", saveNewProduct == 1? "Successfully saved product!" : "Error adding product!");
-		return "createProduct";
+		
+		return "redirect:/myProductList";
 	}
 	
 			
+	@RequestMapping(value = "/myProductList", method = RequestMethod.GET)
+	public String getMyProductList(HttpServletRequest request, Model model) {
+		
+		session = SessionUtils.createSession(request);
+		Long customerId = ((Customer) session.getAttribute("customer"))
+				    .getCustomerId();
+		List<Product> productList = productConfigurationService.getProductsByCustomerId(customerId);
+		
+		model.addAttribute("catProds", productList);
+		return "myProductList";
+		
+	}
+	
+	
+
 }
