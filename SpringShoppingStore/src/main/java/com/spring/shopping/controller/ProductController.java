@@ -6,19 +6,25 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.spring.shopping.controller.constants.ControllerConstants;
+import com.spring.shopping.model.Category;
 import com.spring.shopping.model.Customer;
 import com.spring.shopping.model.Product;
 import com.spring.shopping.model.ReviewForm;
+import com.spring.shopping.model.SubCategory;
 import com.spring.shopping.service.CartData;
+import com.spring.shopping.service.CategoryConfigService;
 import com.spring.shopping.service.CustomerService;
 import com.spring.shopping.service.ProductConfigService;
 import com.spring.shopping.service.ReviewService;
@@ -31,12 +37,14 @@ public class ProductController {
 //	private CartService cartService;
 	@Autowired
 	private ProductConfigService productConfigurationService;
-//	@Autowired
-//	private CategoryConfigService categoryConfigurationService;
+	@Autowired
+	private CategoryConfigService categoryConfigurationService;
 	@Autowired
 	private ReviewService reviewService;
 	@Autowired
 	private CustomerService customerService;
+	
+	private HttpSession session;
 
 	/**
 	 * Product Controller method which retrieves the information required in the
@@ -75,4 +83,31 @@ public class ProductController {
 		}
 		return "product";
 	}
+	
+	@RequestMapping(value = "/createnewproduct", method = RequestMethod.GET)
+	public String createNewProduct( Model model){
+		
+		List<Category> allCategories = categoryConfigurationService.getAllCategories();
+		List<SubCategory> allSubCategories = categoryConfigurationService.getAllSubCategories();
+		model.addAttribute("categoryList",allCategories);
+		model.addAttribute("subcategoryList",allSubCategories);
+		return "createProduct";
+	}
+	
+	@RequestMapping(value = "/createnewproduct", method = RequestMethod.POST)
+	public String handleNewProduct(@ModelAttribute("Product") Product product, BindingResult bindingResult, HttpServletRequest request, Model model){
+		
+		session = SessionUtils.createSession(request);
+		Long customerId = ((Customer) session.getAttribute("customer"))
+				    .getCustomerId();
+		product.setCustomerId(customerId);
+		product.setFeatured(1);
+		product.setAvailable(1);
+		int saveNewProduct = productConfigurationService.saveNewProduct(product, product.getCategory_Id(), product.getSubCategory_Id());
+		model.addAttribute("successful", saveNewProduct == 1? "true": false);
+		model.addAttribute("messsage", "...");
+		return "createProduct";
+	}
+	
+			
 }

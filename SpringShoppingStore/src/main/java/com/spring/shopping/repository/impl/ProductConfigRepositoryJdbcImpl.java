@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
@@ -17,10 +18,12 @@ import com.spring.shopping.util.ProductMapper;
 public class ProductConfigRepositoryJdbcImpl implements ProductConfigRepository {
 
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-
+	private JdbcTemplate jdbcTemplate;
+	
 	public void setDataSource(DataSource dataSource) {
 		this.namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(
 				dataSource);
+		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
 	@Override
@@ -44,4 +47,28 @@ public class ProductConfigRepositoryJdbcImpl implements ProductConfigRepository 
 		return product;
 	}
 
+	
+	@Override
+	public List<Product> readProductByCustomerId(Long customerId) {
+		String sql = "SELECT * FROM product p where p.Customer_Id= :customerId";
+		SqlParameterSource sqlParameterSource = new MapSqlParameterSource(
+				"customerId", customerId);
+		List<Product> productsList = namedParameterJdbcTemplate.query(sql,
+				sqlParameterSource, new ProductMapper());
+		return productsList;
+	}
+
+	@Override
+	public int saveNewProduct(Product product, Long categoryId, Long subcategoryId) {
+		String sql = "insert into product ( Name, Featured, Price, Available, Category_Id, Description, SubCategory_Id, Manufacturer, Customer_Id )"
+				+ "values (?,?,?,?,?,?,?,?,?)"; 
+		
+		Object[] args = new Object[] { product.getName(),product.getFeatured(), product.getPrice(), product.getAvailable(), categoryId, product.getDescription(),
+				subcategoryId, product.getManufacturer(), product.getCustomerId() };
+		
+		int update = jdbcTemplate.update(sql, args);
+		
+		return update;
+		
+	}
 }

@@ -20,4 +20,16 @@ public class ProductConfigRepositoryHibernateImpl implements
 		return null;
 	}
 
+	@Override
+	public List<Product> readProductByCustomerId(Long customerId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int saveNewProduct(Product product, Long categoryId, Long subcategoryId){
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

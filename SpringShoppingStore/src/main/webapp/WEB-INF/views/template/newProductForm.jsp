@@ -20,18 +20,18 @@
 		
 		<div class="form-group">
 			<label for="address1"> Category </label> <select id="Category_Id" name="Category_Id" class="form-control">
-				<option value="volvo">Volvo</option>
-				<option value="saab">Saab</option>
-				<option value="mercedes">Mercedes</option>
-				<option value="audi">Audi</option>
+				<option value="1000126">Volvo</option>
+				<option value="1000126">Saab</option>
+				<option value="1000126">Mercedes</option>
+				<option value="1000126">Audi</option>
 			</select>
 		</div>
 		<div class="form-group">
 			<label for="fullname"> Subcategory </label> <select id="SubCategory_Id" name="SubCategory_Id" class="form-control">
-				<option value="volvo">Volvo</option>
-				<option value="saab">Saab</option>
-				<option value="mercedes">Mercedes</option>
-				<option value="audi">Audi</option>
+				<option value="1000102">Volvo</option>
+				<option value="1000102">Saab</option>
+				<option value="1000102">Mercedes</option>
+				<option value="1000102">Audi</option>
 			</select>
 		</div>
 		

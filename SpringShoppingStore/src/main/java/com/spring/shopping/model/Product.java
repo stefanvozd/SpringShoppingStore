@@ -20,12 +20,21 @@ public class Product implements Serializable {
 	private String description;
 
 	private String manufacturer;
+	
+	private Long customerId;
+	
+	private Long Category_Id;
+	
+	private Long SubCategory_Id;
 
 	public static class ProductBuilder {
 		private String name;
 		private BigDecimal price;
 		private String description;
 		private String manufacturer;
+		private Long customerId;
+		private Long Category_Id;		
+		private Long SubCategory_Id;
 
 		public ProductBuilder name(String name) {
 			this.name = name;
@@ -46,6 +55,16 @@ public class Product implements Serializable {
 			this.manufacturer = manufacturer;
 			return this;
 		}
+		
+		public ProductBuilder Category_Id(Long categoryId) {
+			this.Category_Id = categoryId;
+			return this;
+		}
+		
+		public ProductBuilder SubCategory_Id(Long subcategoryId) {
+			this.SubCategory_Id = subcategoryId;
+			return this;
+		}
 
 		public Product build() {
 			return new Product(this);
@@ -57,6 +76,9 @@ public class Product implements Serializable {
 		price = productBuilder.price;
 		description = productBuilder.description;
 		manufacturer = productBuilder.manufacturer;
+		customerId = productBuilder.customerId;
+		Category_Id = productBuilder.Category_Id;
+		SubCategory_Id = productBuilder.SubCategory_Id;
 	}
 
 	public Product() {
@@ -119,6 +141,15 @@ public class Product implements Serializable {
 		this.manufacturer = manufacturer;
 	}
 
+	
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -135,6 +166,12 @@ public class Product implements Serializable {
 		result = prime * result + ((price == null) ? 0 : price.hashCode());
 		result = prime * result
 				+ ((productId == null) ? 0 : productId.hashCode());
+		result = prime * result
+				+ ((customerId == null) ? 0 : customerId.hashCode());
+		result = prime * result
+				+ ((Category_Id == null) ? 0 : Category_Id.hashCode());
+		result = prime * result
+				+ ((SubCategory_Id == null) ? 0 : SubCategory_Id.hashCode());
 		return result;
 	}
 
@@ -182,7 +219,39 @@ public class Product implements Serializable {
 				return false;
 		} else if (!productId.equals(other.productId))
 			return false;
+		
+		if (customerId == null) {
+			if (other.customerId != null)
+				return false;
+		} else if (!customerId.equals(other.customerId))
+			return false;
+		if (Category_Id == null) {
+			if (other.Category_Id != null)
+				return false;
+		} else if (!Category_Id.equals(other.Category_Id))
+			return false;
+		if (SubCategory_Id == null) {
+			if (other.SubCategory_Id != null)
+				return false;
+		} else if (!SubCategory_Id.equals(other.SubCategory_Id))
+			return false;
 		return true;
+	}
+
+	public Long getCategory_Id() {
+		return Category_Id;
+	}
+
+	public void setCategory_Id(Long category_Id) {
+		Category_Id = category_Id;
+	}
+
+	public Long getSubCategory_Id() {
+		return SubCategory_Id;
+	}
+
+	public void setSubCategory_Id(Long subCategory_Id) {
+		SubCategory_Id = subCategory_Id;
 	}
 
 }

@@ -8,4 +8,6 @@ public interface ProductConfigService {
 	List<Product> getFeaturedProducts();
 
 	Product getProductById(Long productId);
+	
+	public int saveNewProduct(Product product, Long categoryId, Long subcategoryId);
 }

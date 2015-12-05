@@ -25,5 +25,17 @@ public class ProductConfigServiceImpl implements ProductConfigService {
 		Product product = productConfigRepository.readProductById(productId);
 		return product;
 	}
+	
+
+	public List<Product> getProductsByCustomerId(Long customerId) {
+		List<Product> featuredProdList = productConfigRepository
+				.readProductByCustomerId(customerId);
+		return featuredProdList;
+	}
+
+	@Override
+	public int saveNewProduct(Product product, Long categoryId, Long subcategoryId) {
+		return productConfigRepository.saveNewProduct(product, categoryId, subcategoryId);
+	}
 
 }

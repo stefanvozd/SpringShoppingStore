@@ -21,6 +21,7 @@ public class ProductMapper implements RowMapper<Product>,Serializable{
 		product.setAvailable(rs.getInt("Available"));
 		product.setDescription(rs.getString("Description"));
 		product.setManufacturer(rs.getString("Manufacturer"));
+		product.setCustomerId(rs.getLong("Customer_Id"));
 		
 		return product;
 	}
