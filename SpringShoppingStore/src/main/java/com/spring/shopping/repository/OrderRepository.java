@@ -16,4 +16,6 @@ public interface OrderRepository {
 	List<Order> readAllOrdersForCustomer(Customer customer);
 
 	Order readOrderById(Long orderId);
+
+	List<Order> readAllOrdersByProductId(Long productId);
 }

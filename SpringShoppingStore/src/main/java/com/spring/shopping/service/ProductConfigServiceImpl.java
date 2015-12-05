@@ -38,4 +38,5 @@ public class ProductConfigServiceImpl implements ProductConfigService {
 		return productConfigRepository.saveNewProduct(product, categoryId, subcategoryId);
 	}
 
+
 }

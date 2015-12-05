@@ -59,8 +59,17 @@
 				</div>
 				<button type="submit" class="btn btn-default">Submit</button>
 			</form>
+			
+			
 
 			<ul class="nav navbar-nav navbar-right">
+			
+				<li class="dropdown"><a href="/shopping/createnewproduct" class="dropdown-toggle"
+						data-toggle="dropdown" role="button">
+						<img src="resources/images/home/sell.png" width="20px"/>
+						<c:out	value="Sell" />
+						</a></li>
+			
 				<li class="dropdown"><span id="cartIcon"><i
 						class="icon-shopping-cart icon-red"></i> <c:set var="cartItems"
 							value="${cart.numberOfItems}" /> <span
@@ -85,6 +94,7 @@
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="account">Account</a></li>
 								<li><a href="orderHistory">Orders</a></li>
+								<li><a href="myProductList">My products list</a></li>
 								<li><a href="wishlist">Wishlist</a></li>
 								<li><a href="logout">Logout</a></li>
 							</ul></li>

@@ -43,7 +43,7 @@
 						<c:choose>
 							<c:when test="${empty subCatProds}">
 								<c:forEach var="catProds" items="${catProds}">
-									<c:url var="url" value="product">
+									<c:url var="url" value="sellHistory">
 										<c:param name="productId" value="${catProds.productId}" />
 									</c:url>
 									<div class="col-sm-4">
@@ -64,7 +64,7 @@
 														<c:param name="productId" value="${catProds.productId}" />
 													</c:url>
 													<a href="${url}" class="btn btn-default add-to-cart"><i
-														class="fa fa-shopping-cart"></i>Add to cart</a>
+														class="fa fa-shopping-cart"></i>Sell history</a>
 												</div>
 												<div class="product-overlay">
 													<div class="overlay-content">
@@ -81,7 +81,7 @@
 															<c:param name="productId" value="${catProds.productId}" />
 														</c:url>
 														<a href="${url}" class="btn btn-default add-to-cart"><i
-															class="fa fa-shopping-cart"></i>Add to cart</a>
+															class="fa fa-shopping-cart"></i>Sell history</a>
 													</div>
 												</div>
 											</div>
@@ -122,7 +122,7 @@
 														<c:param name="productId" value="${subCatProds.productId}" />
 													</c:url>
 													<a href="${url}" class="btn btn-default add-to-cart"><i
-														class="fa fa-shopping-cart"></i>Add to cart</a>
+														class="fa fa-shopping-cart"></i>Sell history</a>
 												</div>
 												<div class="product-overlay">
 													<div class="overlay-content">
@@ -140,7 +140,7 @@
 																value="${subCatProds.productId}" />
 														</c:url>
 														<a href="${url}" class="btn btn-default add-to-cart"><i
-															class="fa fa-shopping-cart"></i>Add to cart</a>
+															class="fa fa-shopping-cart"></i>Sell history</a>
 													</div>
 												</div>
 											</div>

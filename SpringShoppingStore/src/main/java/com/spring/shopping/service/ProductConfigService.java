@@ -10,4 +10,6 @@ public interface ProductConfigService {
 	Product getProductById(Long productId);
 	
 	public long saveNewProduct(Product product, Long categoryId, Long subcategoryId);
+
+	public List<Product> getProductsByCustomerId(Long customerId);
 }

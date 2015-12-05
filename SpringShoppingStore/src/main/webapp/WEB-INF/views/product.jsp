@@ -100,7 +100,7 @@
 										<li><a href="cart.html">Indian Writers</a></li>
 										<li><a href="login.html">Technology</a></li>
 									</ul></li>
-								<li class="dropdown"><a href="#">Games<i
+								<!-- <li class="dropdown"><a href="#">Games<i
 										class="fa fa-angle-down"></i></a>
 									<ul role="menu" class="sub-menu">
 										<li><a href="blog.html">Action</a></li>
@@ -112,8 +112,8 @@
 										<li><a href="blog-single.html">Racing</a></li>
 										<li><a href="blog-single.html">Sports</a></li>
 										<li><a href="blog-single.html">Strategy</a></li>
-									</ul></li>
-								<li class="dropdown"><a href="#">Movies<i
+									</ul></li> -->
+								<!-- <li class="dropdown"><a href="#">Movies<i
 										class="fa fa-angle-down"></i></a>
 									<ul role="menu" class="sub-menu">
 										<li><a href="blog.html">Action</a></li>
@@ -125,7 +125,7 @@
 										<li><a href="blog-single.html">Mystery</a></li>
 										<li><a href="blog-single.html">Suspense</a></li>
 										<li><a href="blog-single.html">Thriller</a></li>
-									</ul></li>
+									</ul></li> -->
 								<li><a href="contact-us.html">Contact</a></li>
 							</ul>
 						</div>
@@ -319,12 +319,9 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights
+					<p class="pull-left">Copyright © 2015 HACKATHON. All rights
 						reserved.</p>
-					<p class="pull-right">
-						Designed by <span><a target="_blank"
-							href="http://www.themeum.com">Themeum</a></span>
-					</p>
+					
 				</div>
 			</div>
 		</div>

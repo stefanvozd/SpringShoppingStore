@@ -77,4 +77,10 @@ public class OrderServiceImpl implements OrderService {
 		return orderRepository.readOrderById(orderId);
 	}
 
+	@Override
+	public List<Order> getAllOrdersForProduct(Long productId) {
+		// TODO Auto-generated method stub
+		return orderRepository.readAllOrdersByProductId(productId);
+	}
+
 }

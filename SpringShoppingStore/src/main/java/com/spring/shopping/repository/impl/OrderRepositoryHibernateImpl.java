@@ -36,4 +36,10 @@ public class OrderRepositoryHibernateImpl implements OrderRepository {
 		return null;
 	}
 
+	@Override
+	public List<Order> readAllOrdersByProductId(Long productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

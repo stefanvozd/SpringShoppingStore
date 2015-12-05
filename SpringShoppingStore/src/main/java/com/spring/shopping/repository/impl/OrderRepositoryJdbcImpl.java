@@ -1,6 +1,7 @@
 package com.spring.shopping.repository.impl;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -20,6 +21,7 @@ import com.spring.shopping.model.OrderItem;
 import com.spring.shopping.model.Product;
 import com.spring.shopping.repository.OrderRepository;
 import com.spring.shopping.service.CategoryConfigService;
+import com.spring.shopping.util.OrderItemMapper;
 import com.spring.shopping.util.OrderMapper;
 import com.spring.shopping.util.ProductMapper;
 
@@ -91,5 +93,27 @@ public class OrderRepositoryJdbcImpl implements OrderRepository {
 		SqlParameterSource sqlParameterSource = new MapSqlParameterSource("orderId", orderId);
 		return namedParameterJdbcTemplate.queryForObject(sql, sqlParameterSource, new OrderMapper());
 		
+	}
+
+	@Override
+	public List<Order> readAllOrdersByProductId(Long productId) {
+		String sql = "SELECT * FROM orders o where o.Product_Id=:productId";
+		SqlParameterSource sqlParameterSource = new MapSqlParameterSource("productId", productId);
+		List<Order> ordersList = namedParameterJdbcTemplate.query(sql,
+				sqlParameterSource, new OrderMapper());
+		
+		List<Long> orderIdList = new ArrayList<Long>();
+		for (Order order : ordersList) {
+			orderIdList.add(order.getOrderId());
+		}
+		sql = "SELECT * FROM orderitem o where o.Order_Id in (:orderIds)";
+		sqlParameterSource = new MapSqlParameterSource("orderIds", orderIdList);
+		List<OrderItem> orderItemList = namedParameterJdbcTemplate.query(sql,
+				sqlParameterSource, new OrderItemMapper());
+		
+		return ordersList;
+		
+	
+	
 	}
 }

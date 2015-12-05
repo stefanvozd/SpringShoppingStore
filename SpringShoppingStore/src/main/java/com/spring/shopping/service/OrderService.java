@@ -19,4 +19,5 @@ public interface OrderService {
 	
 	Order getOrderById(Long orderId);
 
+	public List<Order> getAllOrdersForProduct(Long productId);
 }
