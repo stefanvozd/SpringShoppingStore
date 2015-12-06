@@ -187,7 +187,7 @@ html,body {
 												Shopping
 										</a></td>
 										<td><c:url var="payment" value="payment" /> <a
-											href="${payment}" type="button" class="btn btn-success">
+											href="${payment}?amount=${cart.total}" type="button" class="btn btn-success">
 												Checkout <span class="glyphicon glyphicon-play"></span>
 										</a></td>
 									</tr>

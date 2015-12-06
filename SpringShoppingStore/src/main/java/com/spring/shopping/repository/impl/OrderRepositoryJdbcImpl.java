@@ -112,4 +112,14 @@ public class OrderRepositoryJdbcImpl implements OrderRepository {
 		
 	}
 
+	@Override
+	public void updateOrder(Order order) {
+		String sql = "update orders set Order_Status=?, transactionid=?  where Order_Id=?";
+		
+		Object[] args = new Object[] { order.getOrderStatus(), order.getTransactionid(), order.getOrderId() };
+
+		jdbcTemplate.update(sql, args);
+
+	}
+
 }

@@ -49,4 +49,10 @@ public class OrderRepositoryHibernateImpl implements OrderRepository {
 		return null;
 	}
 
+	@Override
+	public void updateOrder(Order order) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

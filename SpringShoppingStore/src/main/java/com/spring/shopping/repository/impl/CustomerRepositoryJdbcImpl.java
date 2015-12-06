@@ -65,9 +65,9 @@ public class CustomerRepositoryJdbcImpl implements CustomerRepository {
 
 	@Override
 	public Customer getCustomerById(Long customerId) {
-		String sql = "SELECT * FROM Customer c WHERE c.Customer_Id=:customerId";
+		String sql = "SELECT * FROM customer c WHERE c.Customer_Id=:customerId";
 		SqlParameterSource sqlParameterSource = new MapSqlParameterSource(
-				"customerId", customerId);
+				"customerId", customerId.intValue());
 		Customer customer = namedParameterJdbcTemplate.queryForObject(sql,
 				sqlParameterSource, new CustomerMapper());
 		return customer;

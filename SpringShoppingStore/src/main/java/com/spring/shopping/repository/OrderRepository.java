@@ -21,4 +21,6 @@ public interface OrderRepository {
 	List<OrderItemExtended> readAllOrdersByProductId(Long productId);
 
 	List<Order> readAllPendingOrders();
+
+	void updateOrder(Order order);
 }
