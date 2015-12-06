@@ -150,7 +150,7 @@ html,body {
 						</c:url>
 						<div class="item  col-xs-4 col-lg-4">
 							<div class="thumbnail">
-								<img class="group list-group-image"
+								<img class="group list-group-image" width="247px"
 									src="resources/images/home/${featProds.productId}.jpg" alt="" />
 								<div class="caption">
 									<h4 class="group inner list-group-item-heading">
@@ -166,7 +166,7 @@ html,body {
 									<div class="row">
 										<div class="col-xs-12 col-md-6">
 											<p class="lead">
-												Rs.
+												Eur.
 												<c:out value="${featProds.price}" />
 											</p>
 										</div>

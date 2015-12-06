@@ -30,7 +30,7 @@
 											value="${orders.orderId}" /></a></td>
 								<td><c:out value="${orders.createdDate}" /></td>
 								<td><c:out value="${orders.orderStatus}" /></td>
-								<td><c:out value="${orders.orderTotal} E" /></td>
+								<td><c:out value="${orders.orderTotal} Eur" /></td>
 								<td>
 								<button type="button" class="btn btn-default btn-sm">
 						          <span class="glyphicon glyphicon-download-alt"></span> Download
