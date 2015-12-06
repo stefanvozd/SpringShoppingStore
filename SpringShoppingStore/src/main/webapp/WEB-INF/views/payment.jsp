@@ -128,7 +128,7 @@ $(function() {
 										<form role="form">
 											<span class='payment-errors'></span>
 										      <!-- include two hidden fields -->
-										      <input type="hidden" data-mbills="amount" value="__amount__" />
+										      <input type="hidden" name="amount" value="${amount}" />
 										      <input type="hidden" data-mbills="currency" value="__currency__" />
 										      <input type="hidden" data-mbills="sessiontoken" name="mbills[sessiontoken]" type="text">
 											<div id="onlinePayment">
@@ -148,7 +148,7 @@ $(function() {
 													<!-- name="name" -->
 													<label for="cardNumber"> SECURITY CODE</label>
 													<div class="input-group">
-														<input type="text" class="form-control" id="name" data-mbills="securitycode"
+														<input type="password" class="form-control" id="name" data-mbills="securitycode"
 															 name="name" placeholder=" Security code" required autofocus />
 														<span class="input-group-addon"><span
 															class="glyphicon glyphicon-lock"></span></span>
@@ -195,8 +195,8 @@ $(function() {
 								</div>
 								<ul class="nav nav-pills nav-stacked">
 									<li class="active"><a href="#"><span
-											class="badge pull-right"><span
-												class="glyphicon glyphicon-eur"></span>${amount}</span> Final Payment</a></li>
+											class="badge pull-right" style="font-size: 17px;"><span
+												class="glyphicon glyphicon-euro"></span>${amount}</span> Final Payment</a></li>
 								</ul>
 								<br />
 								<button type="submit" class="btn btn-success btn-lg btn-block">Pay</button>
