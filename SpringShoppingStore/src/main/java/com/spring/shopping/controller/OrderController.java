@@ -67,7 +67,7 @@ public class OrderController {
 	@SuppressWarnings("unused")
 	private HttpSession session;
 
-	private String getSessionToken(CreditCardForm creditCardForm){
+	private String getSessionToken(CreditCardForm creditCardForm, int amount){
 		System.setProperty("jsse.enableSNIExtension", "false");
 		
 		Client client = ClientBuilder.newClient();
@@ -91,8 +91,9 @@ public class OrderController {
 			@ModelAttribute("paymentForm") CreditCardForm creditCardForm,
 			HttpServletRequest request, HttpServletResponse response2)
 			throws ParseException, IOException {
-
-		String sessionToken = getSessionToken(creditCardForm);
+		
+		int amount = Integer.parseInt(request.getParameter("amount"));
+		String sessionToken = getSessionToken(creditCardForm, amount);
 		
 		Client client = ClientBuilder.newClient();
 		JSONObject obj = new JSONObject();
