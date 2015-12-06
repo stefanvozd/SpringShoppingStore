@@ -36,9 +36,9 @@ public class CategoryConfigServiceImpl implements CategoryConfigService {
 	 */
 	@Override
 	public List<SubCategory> getAllSubCategories() {
-		// Code to Retrieve All SubCategories
-		// in the Application
-		return null;
+		List<SubCategory> categoryList = categoryConfigRepository
+				.readAllSubCategories();
+		return categoryList;
 	}
 
 	/**

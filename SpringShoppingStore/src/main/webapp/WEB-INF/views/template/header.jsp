@@ -59,20 +59,21 @@
 				</div>
 				<button type="submit" class="btn btn-default">Submit</button>
 			</form>
-			
-			
 
 			<ul class="nav navbar-nav navbar-right">
+
 			
 				<li class="dropdown"><a href="/shopping/createnewproduct" class="dropdown-toggle"
 						data-toggle="dropdown" role="button">
 						<img src="resources/images/home/sell.png" width="20px"/>
 						<c:out	value="Sell" />
-						</a></li>
-			
-				<li class="dropdown"><span id="cartIcon"><i
-						class="icon-shopping-cart icon-red"></i> <c:set var="cartItems"
-							value="${cart.numberOfItems}" /> <span
+						</a>
+						</li>
+				
+				<li class="dropdown"><a href="#"><span id="cartIcon"><i
+
+						class="icon-shopping-cart icon-red"></i>
+						 <c:set var="cartItems" value="${cart.numberOfItems}" /> <span
 						class="headerCartItemsCount"> <c:choose>
 								<c:when test="${empty cartItems}">0
 							</c:when>
@@ -81,11 +82,12 @@
 								</c:otherwise>
 							</c:choose>
 					</span> <span class="headerCartItemsCountWord"><c:out
-								value="${cartItems==1?'item':'items'}" /></span></span> <b class="caret"></b></span></a>
+								value="${cartItems==1?'item':'items'}" /></span></span> <b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<c:url var="cart1" value="/cart" />
 						<li><a tabindex="-1" href="${cart1}">View Cart</a></li>
-					</ul></li>
+					</ul>
+				</li>
 				<c:choose>
 					<c:when test="${not empty customer}">
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -100,7 +102,11 @@
 							</ul></li>
 					</c:when>
 					<c:otherwise>
-						<a href="login">Sign In/Register</a>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="dropdown">
+								<a style="white-space: nowrap; margin-right: 5px;" href="login">Sign In/Register</a>
+							</li>
+						</ul>
 					</c:otherwise>
 				</c:choose>
 			</ul>
