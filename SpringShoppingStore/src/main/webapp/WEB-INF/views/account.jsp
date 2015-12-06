@@ -156,21 +156,21 @@ html,body {
 			<div class="col-sm-3">
 				<nav class="nav-sidebar nav-pills nav-stacked">
 				<ul class="nav tabs">
-					<li class="active"><a href="account" data-toggle="tab"><i
+					<li class="active"><a href="account"><i
 							class="fa fa-home fa-fw"></i>My Account</a></a></li>
-					<li class=""><a href="orderHistory" data-toggle="tab"><i
+					<li class=""><a href="orderHistory"><i
 							class="fa fa-list-alt fa-fw"></i>My Orders</a></li>
-					<li class=""><a href="myProductList" data-toggle="tab"><i
+					<li class=""><a href="myProductList"><i
 							class="fa fa-list-alt fa-fw"></i>My Products List</a></li>
-					<li class=""><a href="wishlist" data-toggle="tab"><i
+					<li class=""><a href="wishlist"><i
 							class="fa fa-file-o fa-fw"></i>Wishlist</a></li>
-					<li class=""><a href="change-password" data-toggle="tab"><i
+					<li class=""><a href="change-password"><i
 							class="fa fa-bar-chart-o fa-fw"></i>Change Password</a></li>
-					<li class=""><a href="addressDetails" data-toggle="tab"><i
+					<li class=""><a href="addressDetails"><i
 							class="fa fa-table fa-fw"></i>Addresses</a></li>
-					<li class=""><a href="reviews" data-toggle="tab"><i
+					<li class=""><a href="reviews"><i
 							class="fa fa-tasks fa-fw"></i>Reviews & Ratings</a></li>
-					<li class=""><a href="updateEmail" data-toggle="tab"><i
+					<li class=""><a href="updateEmail"><i
 							class="fa fa-calendar fa-fw"></i>Update Email</a></li>
 				</ul>
 				</nav>
