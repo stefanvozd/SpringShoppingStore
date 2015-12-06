@@ -6,6 +6,7 @@ import com.spring.shopping.model.AddressForm;
 import com.spring.shopping.model.Customer;
 import com.spring.shopping.model.Order;
 import com.spring.shopping.model.OrderItem;
+import com.spring.shopping.model.OrderItemExtended;
 import com.spring.shopping.model.Product;
 import com.spring.shopping.repository.OrderRepository;
 
@@ -37,7 +38,7 @@ public class OrderRepositoryHibernateImpl implements OrderRepository {
 	}
 
 	@Override
-	public List<Order> readAllOrdersByProductId(Long productId) {
+	public List<OrderItemExtended> readAllOrdersByProductId(Long productId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

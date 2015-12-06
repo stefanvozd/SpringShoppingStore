@@ -1,7 +1,6 @@
 package com.spring.shopping.repository.impl;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -18,10 +17,11 @@ import com.spring.shopping.model.AddressForm;
 import com.spring.shopping.model.Customer;
 import com.spring.shopping.model.Order;
 import com.spring.shopping.model.OrderItem;
+import com.spring.shopping.model.OrderItemExtended;
 import com.spring.shopping.model.Product;
 import com.spring.shopping.repository.OrderRepository;
 import com.spring.shopping.service.CategoryConfigService;
-import com.spring.shopping.util.OrderItemMapper;
+import com.spring.shopping.util.OrderItemExtendedMapper;
 import com.spring.shopping.util.OrderMapper;
 import com.spring.shopping.util.ProductMapper;
 
@@ -96,20 +96,11 @@ public class OrderRepositoryJdbcImpl implements OrderRepository {
 	}
 
 	@Override
-	public List<Order> readAllOrdersByProductId(Long productId) {
-		String sql = "SELECT * FROM orders o where o.Product_Id=:productId";
+	public List<OrderItemExtended> readAllOrdersByProductId(Long productId) {
+		String sql = "SELECT o.Order_Id, oi.Product_Id, oi.OrderItem_Id, o.CreatedDate, o.Order_Status, oi.Quantity  FROM orders o join orderitem oi on o.Order_Id = oi.Order_Id  where oi.Product_Id=:productId and o.Order_Status = 'Paid'";
 		SqlParameterSource sqlParameterSource = new MapSqlParameterSource("productId", productId);
-		List<Order> ordersList = namedParameterJdbcTemplate.query(sql,
-				sqlParameterSource, new OrderMapper());
-		
-		List<Long> orderIdList = new ArrayList<Long>();
-		for (Order order : ordersList) {
-			orderIdList.add(order.getOrderId());
-		}
-		sql = "SELECT * FROM orderitem o where o.Order_Id in (:orderIds)";
-		sqlParameterSource = new MapSqlParameterSource("orderIds", orderIdList);
-		List<OrderItem> orderItemList = namedParameterJdbcTemplate.query(sql,
-				sqlParameterSource, new OrderItemMapper());
+		List<OrderItemExtended> ordersList = namedParameterJdbcTemplate.query(sql,
+				sqlParameterSource, new OrderItemExtendedMapper());
 		
 		return ordersList;
 		

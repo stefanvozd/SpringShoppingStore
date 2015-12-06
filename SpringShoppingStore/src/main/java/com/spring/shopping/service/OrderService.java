@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import com.spring.shopping.model.AddressForm;
 import com.spring.shopping.model.Customer;
 import com.spring.shopping.model.Order;
+import com.spring.shopping.model.OrderItemExtended;
 import com.spring.shopping.model.Product;
 
 public interface OrderService {
@@ -19,5 +20,5 @@ public interface OrderService {
 	
 	Order getOrderById(Long orderId);
 
-	public List<Order> getAllOrdersForProduct(Long productId);
+	public List<OrderItemExtended> getAllOrdersForProduct(Long productId);
 }

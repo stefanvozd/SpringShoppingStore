@@ -20,6 +20,7 @@ import com.spring.shopping.model.AddressForm;
 import com.spring.shopping.model.CreditCardForm;
 import com.spring.shopping.model.Customer;
 import com.spring.shopping.model.Order;
+import com.spring.shopping.model.OrderItemExtended;
 import com.spring.shopping.model.Product;
 import com.spring.shopping.service.CartData;
 import com.spring.shopping.service.CartService;
@@ -101,10 +102,12 @@ public class OrderController {
 	
 	@RequestMapping(value = "/sellHistory", method = RequestMethod.GET)
 	public String getSellHistory(Model model, HttpServletRequest request) {
-		Long productId = SessionUtils.getSessionVariables(request, "productId");
+		Long productId = Long.valueOf(request.getParameter( "productId"));
 		
-//		List<Product> productsList = orderService.getAllOrderItems(order);
-		return null;
+		List<OrderItemExtended> orderItemExtendedList = orderService.getAllOrdersForProduct(productId);
+		model.addAttribute("orderList", orderItemExtendedList);
+		model.addAttribute("page", "ordersHistoryList");
+		return "account";
 		
 	}
 
