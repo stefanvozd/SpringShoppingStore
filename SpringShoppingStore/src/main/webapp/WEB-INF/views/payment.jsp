@@ -129,6 +129,7 @@ $(function() {
 											<span class='payment-errors'></span>
 										      <!-- include two hidden fields -->
 										      <input type="hidden" name="amount" value="${amount}" />
+										      <input type="hidden" name="sellerPhoneNumber" value="${sellerPhoneNumber}" />
 										      <input type="hidden" data-mbills="currency" value="__currency__" />
 										      <input type="hidden" data-mbills="sessiontoken" name="mbills[sessiontoken]" type="text">
 											<div id="onlinePayment">

@@ -60,6 +60,29 @@ public class OrderServiceImpl implements OrderService {
 		orderRepository.createOrder(order, orderItemsList, address);
 		return order;
 	}
+	
+	@Override
+	public Order createOrder(BigDecimal orderTotal, String sellPhoneNumber,	HttpServletRequest request)		throws ParseException {
+		Date date = new Date();
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		String formattedDate = dateFormat.format(date);
+		Date presentDate = dateFormat.parse(formattedDate);
+		java.util.Date sqlDate = new java.util.Date(presentDate.getTime());
+	
+		DateFormat newdateFormat = new SimpleDateFormat("yyyyMMddhhmmss");
+		String newformattedDate = newdateFormat.format(date);
+		Long orderId = Long.parseLong(newformattedDate);
+		Order order = new Order();
+		order.setOrderId(orderId);
+		order.setCreatedDate(sqlDate);
+		order.setUpdatedDate(sqlDate);
+		order.setEmailAddress(" ");
+		order.setOrderStatus(PENDING_ORDER_STATUS);
+		order.setOrderTotal(orderTotal);
+		order.setSellerPhoneNumber(sellPhoneNumber);
+		orderRepository.createOrder(order, new ArrayList<OrderItem>(), null);
+		return order;
+	}
 
 	@Override
 	public List<Product> getAllOrderItems(Order order) {

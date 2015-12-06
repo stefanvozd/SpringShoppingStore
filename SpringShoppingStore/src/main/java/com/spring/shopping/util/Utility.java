@@ -22,4 +22,8 @@ public class Utility {
 		return (long) (Long.parseLong(address.getZipCode())
 				* customer.getCustomerId() * Math.random());
 	}
+	
+	public static int getRandomNumber(int min, int max) {
+	    return (int) Math.floor(Math.random() * (max - min + 1)) + min;
+	}
 }

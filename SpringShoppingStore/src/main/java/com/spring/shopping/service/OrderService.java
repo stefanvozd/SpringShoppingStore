@@ -1,5 +1,6 @@
 package com.spring.shopping.service;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.util.List;
 
@@ -27,4 +28,6 @@ public interface OrderService {
 			HttpServletRequest request, String transactionId, String mappStatus) throws ParseException;
 	
 	void updateOrder(Order order);
+	
+	Order createOrder(BigDecimal orderTotal, String sellPhoneNumber, HttpServletRequest request) throws ParseException;
 }

@@ -91,7 +91,9 @@ public class CheckoutController {
 		session = SessionUtils.createSession(request);
 		 
 		 String amount = request.getParameter("amount");
+		 String phoneNumber = request.getParameter("phoneNumber");
 			 model.addAttribute("amount", amount);
+			 model.addAttribute("sellerPhoneNumber", phoneNumber);
 		 
 		 
 		return "payment";

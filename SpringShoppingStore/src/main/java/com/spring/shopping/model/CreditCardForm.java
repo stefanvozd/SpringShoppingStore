@@ -9,6 +9,7 @@ public class CreditCardForm {
 	private Integer year;
 	private String name;
 	private String cvvCode;
+	private String sellerPhoneNumber;
 
 	public Long getCustomerId() {
 		return customerId;
@@ -56,6 +57,14 @@ public class CreditCardForm {
 
 	public void setCvvCode(String cvvCode) {
 		this.cvvCode = cvvCode;
+	}
+
+	public String getSellerPhoneNumber() {
+		return sellerPhoneNumber;
+	}
+
+	public void setSellerPhoneNumber(String sellerPhoneNumber) {
+		this.sellerPhoneNumber = sellerPhoneNumber;
 	}
 
 }

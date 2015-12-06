@@ -1,6 +1,7 @@
 package com.spring.shopping.controller;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -93,6 +94,7 @@ public class OrderController {
 			throws ParseException, IOException {
 		
 		int amount = Integer.parseInt(request.getParameter("amount"));
+		String sellerPhoneNumber = request.getParameter("sellerPhoneNumber");
 		String sessionToken = getSessionToken(creditCardForm, amount);
 		
 		Client client = ClientBuilder.newClient();
@@ -130,6 +132,7 @@ public class OrderController {
 				"customer");
 		//AddressForm address = SessionUtils.getSessionVariables(request,"address");
 		Order order=null;
+		
 		if(customer!=null)
 		{
 			order = orderService.createOrder(cartService, customer, null,request);
@@ -152,7 +155,11 @@ public class OrderController {
 					"Order Confirmation for " + customer.getUserName());
 				return "redirect:/order";
 		}
-		else
+		else if (sellerPhoneNumber != null && sellerPhoneNumber.length() > 0)  {
+			CartData cartData = SessionUtils.getSessionVariables(request,
+					ControllerConstants.CART);
+			 orderService.createOrder(new BigDecimal(amount), sellerPhoneNumber, request);
+		}
 			return "successPayment";
 	}
 
