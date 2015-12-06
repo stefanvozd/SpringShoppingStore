@@ -74,6 +74,8 @@ public class CheckoutController {
 
 	@RequestMapping(value = "/payment", method = RequestMethod.GET)
 	public String getPaymentForm(Model model, HttpServletRequest request) {
+		 String phoneNumber = ((Customer) session.getAttribute("customer")).getPhoneNumber();
+		 model.addAttribute("phoneNumber", phoneNumber);
 		return "payment";
 	}
 

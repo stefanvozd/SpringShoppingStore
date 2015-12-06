@@ -40,7 +40,7 @@ public class CustomerRepositoryJdbcImpl implements CustomerRepository {
 
 	@Override
 	public Integer registerUser(Customer customer) {
-		String sql = "INSERT INTO customer (User_Name,Pass,Email_Address) VALUES(:userName,:password,:emailAddress)";
+		String sql = "INSERT INTO customer (User_Name,Pass,Email_Address,Phone_Number) VALUES(:userName,:password,:emailAddress,:phoneNumber)";
 		SqlParameterSource sqlParameterSource = new BeanPropertySqlParameterSource(
 				customer);
 
