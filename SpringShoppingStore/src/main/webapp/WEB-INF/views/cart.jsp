@@ -186,8 +186,8 @@ html,body {
 												class="glyphicon glyphicon-shopping-cart"></span> Continue
 												Shopping
 										</a></td>
-										<td><c:url var="checkout" value="checkout" /> <a
-											href="${checkout}" type="button" class="btn btn-success">
+										<td><c:url var="payment" value="payment" /> <a
+											href="${payment}" type="button" class="btn btn-success">
 												Checkout <span class="glyphicon glyphicon-play"></span>
 										</a></td>
 									</tr>

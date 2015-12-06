@@ -20,7 +20,7 @@ footer {
 body {
 	font-family: Segoe UI;
 	font-size: 14px;
-	background-color: gray;
+	background-color: white;
 }
 
 html,body {
@@ -57,7 +57,9 @@ html,body {
 }
 
 body {
-	margin-top: 20px;
+	font-family: Segoe UI;
+	font-size: 14px;
+	background-color: white;
 }
 
 .panel-title {
@@ -88,6 +90,12 @@ function makeOTPPayment()
 	$("#liOnlinePayment").removeClass("active");
 	$("#liOTPPayment").addClass("active");
 }
+</script>
+ <script type="text/javascript" src="https://hackathon.halcom.com/js/mbills.js"></script>
+ <script>
+$(function() {
+  $("#payment-form").mbills({ merchantid:"aa10000005", env: "dev" });
+});
 </script>
 </head>
 <body>

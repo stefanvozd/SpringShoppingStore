@@ -43,7 +43,6 @@ public class OrderRepositoryJdbcImpl implements OrderRepository {
 	public void createOrder(final Order order, List<OrderItem> orderItemsList,
 			AddressForm address) {
 		Order order1 = order;
-		order1.setAddressId(address.getAddressId());
 		String sql = "insert into orders (Order_Id,CreatedDate,Email_Address,Order_Status,Order_SubTotal,Customer_Id,Address_Id) values (:orderId,:createdDate,:emailAddress,:orderStatus,:orderTotal,:customerId,:addressId)";
 		SqlParameterSource sqlParameterSource = new BeanPropertySqlParameterSource(
 				order1);

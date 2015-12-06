@@ -255,7 +255,7 @@ html,body {
 		<!--Footer-->
 
 		<div class="footer-bottom">
-			<div class="container">
+			<div class="container_i">
 				<div class="row">
 					<p class="pull-left">Copyright © 2015 HACKATHON. All rights
 						reserved.</p>
