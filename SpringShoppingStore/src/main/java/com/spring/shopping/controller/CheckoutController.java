@@ -75,10 +75,25 @@ public class CheckoutController {
 	@RequestMapping(value = "/payment", method = RequestMethod.GET)
 	public String getPaymentForm(Model model, HttpServletRequest request) {
 		session = SessionUtils.createSession(request);
-		try {
-		 String phoneNumber = ((Customer) session.getAttribute("customer")).getPhoneNumber();
-		 model.addAttribute("phoneNumber", phoneNumber);
-		}catch (NullPointerException e) {}
+		 try{
+			 String phoneNumber = ((Customer) session.getAttribute("customer")).getPhoneNumber();
+			 model.addAttribute("phoneNumber", phoneNumber);
+		 }catch(Exception e){}
+		 
+		 String amount = request.getParameter("amount");
+		 model.addAttribute("amount", amount);
+		 
+		return "payment";
+	}
+	
+	@RequestMapping(value = "/payment", method = RequestMethod.POST)
+	public String postPaymentForm(Model model, HttpServletRequest request) {
+		session = SessionUtils.createSession(request);
+		 
+		 String amount = request.getParameter("amount");
+			 model.addAttribute("amount", amount);
+		 
+		 
 		return "payment";
 	}
 

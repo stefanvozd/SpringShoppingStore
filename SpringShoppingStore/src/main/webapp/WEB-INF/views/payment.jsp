@@ -196,7 +196,7 @@ $(function() {
 								<ul class="nav nav-pills nav-stacked">
 									<li class="active"><a href="#"><span
 											class="badge pull-right"><span
-												class="glyphicon glyphicon-usd"></span>4200</span> Final Payment</a></li>
+												class="glyphicon glyphicon-eur"></span>${amount}</span> Final Payment</a></li>
 								</ul>
 								<br />
 								<button type="submit" class="btn btn-success btn-lg btn-block">Pay</button>
