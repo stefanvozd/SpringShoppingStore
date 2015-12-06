@@ -150,7 +150,7 @@ html,body {
 						</c:url>
 						<div class="item  col-xs-4 col-lg-4">
 							<div class="thumbnail">
-								<img class="group list-group-image"
+								<img class="group list-group-image" width="247px"
 									src="resources/images/home/${featProds.productId}.jpg" alt="" />
 								<div class="caption">
 									<h4 class="group inner list-group-item-heading">
