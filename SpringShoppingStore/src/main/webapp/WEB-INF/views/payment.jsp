@@ -91,6 +91,12 @@ function makeOTPPayment()
 	$("#liOTPPayment").addClass("active");
 }
 </script>
+ <script type="text/javascript" src="https://hackathon.halcom.com/js/mbills.js"></script>
+ <script>
+$(function() {
+  $("#payment-form").mbills({ merchantid:"aa10000005", env: "dev" });
+});
+</script>
 </head>
 <body>
 	<div class="container">
