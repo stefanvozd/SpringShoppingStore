@@ -147,9 +147,9 @@ hr {
 													<c:out value="${item.quantity}" />
 												</div>
 											</td>
-											<td class="col-sm-1 col-md-1 text-center"><strong>Rs.<c:out
+											<td class="col-sm-1 col-md-1 text-center"><strong>Eur.<c:out
 														value="${item.product.price}" /></strong></td>
-											<td class="col-sm-1 col-md-1 text-center"><strong>Rs.<c:out
+											<td class="col-sm-1 col-md-1 text-center"><strong>Eur.<c:out
 														value="${item.total}" /></strong></td>
 											<td class="col-sm-1 col-md-1"><c:url var="remove"
 													value="remove">

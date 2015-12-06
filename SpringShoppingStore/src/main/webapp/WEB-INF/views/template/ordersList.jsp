@@ -29,7 +29,7 @@
 											value="${orders.orderId}" /></a></td>
 								<td><c:out value="${orders.createdDate}" /></td>
 								<td><c:out value="${orders.orderStatus}" /></td>
-								<td><c:out value="Rs.${orders.orderTotal}" /></td>
+								<td><c:out value="Eur.${orders.orderTotal}" /></td>
 							</tr>
 						</c:forEach>
 					</tbody>

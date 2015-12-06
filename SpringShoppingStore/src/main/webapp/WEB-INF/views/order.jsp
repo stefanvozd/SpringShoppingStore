@@ -100,7 +100,7 @@ html,body {
 									</div>
 								</div>
 							</td>
-							<td><strong><c:out value="Rs.${product.price}" /></strong></td>
+							<td><strong><c:out value="Eur.${product.price}" /></strong></td>
 							<td><strong><c:out
 										value="${orderDetails.orderStatus}" /></strong></td>
 
