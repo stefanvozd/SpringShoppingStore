@@ -11,25 +11,23 @@
 	<div class="col-md-12">
 		<div class="row">
 			<div class="table-responsive">
-				<h1>Order Information</h1>
+				<h1>Orders Information</h1>
 				<table class="table table-bordered table-hover table-condensed">
 					<thead>
 						<th>Order Id</th>
+						<th>Quantity</th>
 						<th>Created Date</th>
-						<th>Order Status</th>
-						<th>Order Total</th>
 					</thead>
 					<tbody>
 						<c:forEach var="orders" items="${orderList}">
 							<tr>
 								<c:url var="orderDetail" value="orderDetail">
-									<c:param name="id" value="${orders.orderId}" />
+									<c:param name="id" value="${orders.orderItemId}" />
 								</c:url>
 								<td><a href="${orderDetail}"><c:out
-											value="${orders.orderId}" /></a></td>
+											value="${orders.orderItemId}" /></a></td>
+								<td><c:out value="${orders.quantity}" /></td>
 								<td><c:out value="${orders.createdDate}" /></td>
-								<td><c:out value="${orders.orderStatus}" /></td>
-								<td><c:out value="Rs.${orders.orderTotal}" /></td>
 							</tr>
 						</c:forEach>
 					</tbody>

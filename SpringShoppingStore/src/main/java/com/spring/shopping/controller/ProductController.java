@@ -119,6 +119,7 @@ public class ProductController {
 		List<Product> productList = productConfigurationService.getProductsByCustomerId(customerId);
 		
 		model.addAttribute("catProds", productList);
+		model.addAttribute("page", "myProductListBase");
 		return "myProductList";
 		
 	}

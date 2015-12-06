@@ -6,6 +6,7 @@ import com.spring.shopping.model.AddressForm;
 import com.spring.shopping.model.Customer;
 import com.spring.shopping.model.Order;
 import com.spring.shopping.model.OrderItem;
+import com.spring.shopping.model.OrderItemExtended;
 import com.spring.shopping.model.Product;
 
 public interface OrderRepository {
@@ -17,5 +18,5 @@ public interface OrderRepository {
 
 	Order readOrderById(Long orderId);
 
-	List<Order> readAllOrdersByProductId(Long productId);
+	List<OrderItemExtended> readAllOrdersByProductId(Long productId);
 }
