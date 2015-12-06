@@ -19,4 +19,6 @@ public interface OrderRepository {
 	Order readOrderById(Long orderId);
 
 	List<OrderItemExtended> readAllOrdersByProductId(Long productId);
+
+	List<Order> readAllPendingOrders();
 }

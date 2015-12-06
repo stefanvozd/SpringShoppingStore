@@ -43,4 +43,10 @@ public class OrderRepositoryHibernateImpl implements OrderRepository {
 		return null;
 	}
 
+	@Override
+	public List<Order> readAllPendingOrders() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

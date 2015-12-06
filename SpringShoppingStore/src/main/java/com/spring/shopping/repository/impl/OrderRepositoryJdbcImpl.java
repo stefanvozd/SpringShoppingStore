@@ -88,6 +88,13 @@ public class OrderRepositoryJdbcImpl implements OrderRepository {
 	}
 
 	@Override
+	public List<Order> readAllPendingOrders() {
+		String sql = "SELECT * FROM orders o where o.Order_Status = 'Pending'";
+		List<Order> ordersList =  jdbcTemplate.query(sql, new OrderMapper());
+		return ordersList;
+	}
+	
+	@Override
 	public Order readOrderById(Long orderId) {
 		String sql = "SELECT * FROM orders o where o.Order_Id=:orderId";
 		SqlParameterSource sqlParameterSource = new MapSqlParameterSource("orderId", orderId);

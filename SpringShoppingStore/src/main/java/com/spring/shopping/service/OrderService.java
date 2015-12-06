@@ -21,4 +21,5 @@ public interface OrderService {
 	Order getOrderById(Long orderId);
 
 	public List<OrderItemExtended> getAllOrdersForProduct(Long productId);
+	List<Order> getAllPendingOrders();
 }

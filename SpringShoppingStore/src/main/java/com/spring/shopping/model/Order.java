@@ -13,7 +13,16 @@ public class Order {
 	private BigDecimal orderTotal;
 	private Long customerId;
 	private Long addressId;
+	private Long transactionid;
 
+	public Long getTransactionid() {
+		return transactionid;
+	}
+	
+	public void setTransactionid(Long transactionid) {
+		this.transactionid = transactionid;
+	}
+	
 	public Long getAddressId() {
 		return addressId;
 	}

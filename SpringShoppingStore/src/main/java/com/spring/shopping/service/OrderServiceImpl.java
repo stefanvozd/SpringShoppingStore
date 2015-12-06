@@ -72,6 +72,12 @@ public class OrderServiceImpl implements OrderService {
 
 		return orderRepository.readAllOrdersForCustomer(customer);
 	}
+	
+	@Override
+	public List<Order> getAllPendingOrders() {
+
+		return orderRepository.readAllPendingOrders();
+	}
 
 	@Override
 	public Order getOrderById(Long orderId) {
