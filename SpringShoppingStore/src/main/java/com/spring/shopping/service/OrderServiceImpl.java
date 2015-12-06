@@ -90,4 +90,39 @@ public class OrderServiceImpl implements OrderService {
 		return orderRepository.readAllOrdersByProductId(productId);
 	}
 
+	@Override
+	public Order createOrder(CartService cartService, Customer customer, AddressForm address,
+			HttpServletRequest request, String transactionId, String status) throws ParseException {
+
+		Date date = new Date();
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		String formattedDate = dateFormat.format(date);
+		Date presentDate = dateFormat.parse(formattedDate);
+		java.util.Date sqlDate = new java.util.Date(presentDate.getTime());
+		Long orderId = Utility.generateOrderNumber(date, customer);
+		Order order = new Order();
+		order.setOrderId(orderId);
+		order.setCreatedDate(sqlDate);
+		order.setUpdatedDate(sqlDate);
+		order.setEmailAddress(customer.getEmailAddress());
+		order.setOrderStatus(PENDING_ORDER_STATUS);
+		CartData cartData = SessionUtils.getSessionVariables(request,
+				ControllerConstants.CART);
+		order.setOrderTotal(new BigDecimal(cartService.getTotal(cartData)));
+		order.setCustomerId(customer.getCustomerId());
+		
+		order.setOrderStatus(status);
+		order.setTransactionid(Long.parseLong(transactionId));
+		
+		List<OrderItem> orderItemsList = new ArrayList<OrderItem>();
+		for (OrderItem orderItem : cartService.getOrderItemsList(cartData)) {
+			orderItemsList.add(orderItem);
+		}
+		orderRepository.createOrder(order, orderItemsList, address);
+		return order;
+		
+	}
+
+
+
 }

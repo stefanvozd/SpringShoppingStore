@@ -12,8 +12,7 @@ import com.spring.shopping.model.OrderItemExtended;
 import com.spring.shopping.model.Product;
 
 public interface OrderService {
-	public Order createOrder(CartService cartService,
-			Customer customer, AddressForm address, HttpServletRequest request) throws ParseException;
+	public Order createOrder(CartService cartService, 			Customer customer, AddressForm address, HttpServletRequest request) throws ParseException;
 	public List<Product> getAllOrderItems(Order order);
 	
 	public List<Order> getAllOrdersForCustomer(Customer customer);
@@ -21,5 +20,9 @@ public interface OrderService {
 	Order getOrderById(Long orderId);
 
 	public List<OrderItemExtended> getAllOrdersForProduct(Long productId);
+	
 	List<Order> getAllPendingOrders();
+	
+	public Order createOrder(CartService cartService, Customer customer, AddressForm address,
+			HttpServletRequest request, String transactionId, String mappStatus) throws ParseException;
 }

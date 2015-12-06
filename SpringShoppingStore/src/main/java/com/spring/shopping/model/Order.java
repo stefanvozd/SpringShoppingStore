@@ -86,5 +86,17 @@ public class Order {
 	public void setOrderTotal(BigDecimal orderTotal) {
 		this.orderTotal = orderTotal;
 	}
+	
+	
+	public static String mappStatus (int iStatus) {
+		switch (iStatus) {
+		case 1: return "Pending";
+		case 2: return "Paid";
+		case 3: return "Rejected";
+		case -1: return "Error";
+		}
+		
+		return "Error";
+	}
 
 }
