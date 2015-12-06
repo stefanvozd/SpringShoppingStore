@@ -7,6 +7,34 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
+
+<style>
+.span-Error {
+ color: red;
+}
+
+.span-Pending {
+color: orange;
+}
+
+.span-Paid {
+color: green;
+}
+
+.btn-Error {
+ opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+
+.btn-Peding {
+ opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+
+.btn-Paid {
+
+}
+</style>
 <body>
 	<div class="col-md-12">
 		<div class="row">
@@ -29,10 +57,10 @@
 								<td><a href="${orderDetail}"><c:out
 											value="${orders.orderId}" /></a></td>
 								<td><c:out value="${orders.createdDate}" /></td>
-								<td><c:out value="${orders.orderStatus}" /></td>
+								<td><span class="span-${orders.orderStatus}"><c:out value="${orders.orderStatus}" /></span></td>
 								<td><c:out value="${orders.orderTotal} Eur" /></td>
 								<td>
-								<button type="button" class="btn btn-default btn-sm">
+								<button class="btn-${orders.orderStatus}" type="button" class="btn btn-default btn-sm">
 						          <span class="glyphicon glyphicon-download-alt"></span> Download
 						        </button>
 								</td>
