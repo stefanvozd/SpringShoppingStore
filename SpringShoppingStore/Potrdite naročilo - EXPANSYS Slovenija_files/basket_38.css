@@ -1,0 +1,269 @@
+/* Expansys/8a/basket */
+#footer {display:none}
+#footer_wrap {padding:30px}
+
+h2 {background:url(/j/8a/images/pages/product/title_bg.png) no-repeat 100% 100%}
+
+#header .status {position:absolute;top:6px;right:0;margin:10px 0;text-align:center}
+#topnav .c1,#topnav .c2 .icon,#topnav .c3 {display:none !important}
+
+#basket {padding-top:12px;font-size:13px;border-top:2px solid #0098db}
+
+#basket:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+#basket_primary {float:left;width:648px;padding-right:15px;border-right:1px solid #eee}
+#basket_primary.ppreview {float:none;margin:12px auto;border-right:none}
+#basket_aside {float:left;width:300px;padding:0 0 0 16px}
+
+#basket .field,#basket select {padding:5px;font-size:13px;color:#3c474f;border:1px solid #a2b1bd;background:#fff url(/j/8a/images/pages/checkout/field_bg.png) repeat-x 0 0;-moz-border-radius:6px;border-radius:6px;-moz-box-shadow:0 0 4px rgba(60,71,79,.3)}
+
+#basket .status {position:absolute;top:26px;right:0;margin:10px 0;text-align:center}
+
+/* basket */
+#basket_contents table {width:100%;margin:0}
+#basket_contents th {padding:4px 8px;font-size:13px;text-align:left;border-bottom:1px solid #eff2f5}
+#basket_contents td {padding:4px 8px;border-bottom:1px solid #eff2f5}
+#basket_contents .last td {border-bottom:0}
+#basket_contents #th_price,#basket_contents #th_total {text-align:right}
+#basket_contents .td_img {width:48px}
+#basket_contents .td_price,#basket_contents .td_total {font-weight:normal;font-size:13px;color:#56a61d;text-align:right}
+#basket_contents h3 {margin:3px 0 2px;font-size:13px;line-height:15px}
+#basket_contents a {color:#001722;text-decoration:none}
+#basket_contents a:hover {color:#001722;text-decoration:underline}
+#basket_contents .td_rm  {padding:0 10px 0 0}
+#basket_contents .td_info {width:275px}
+#basket_contents .td_info .version {margin:4px 0;font-size:11px;color:#666}
+#basket_contents .td_info .stock {margin:4px 0;font-size:11px;color:#666}
+#basket_contents .td_info .stock span {color:#666 !important}
+#basket_contents .td_qty {width:80px}
+#basket_contents .td_qty .field {width:25px;text-align:center}
+#basket_contents .last .td_qty {padding:8px 0}
+#basket_contents #th_qty,#basket_contents .td_qty {text-align:center;background:#eff2f5 url(/j/8a/images/pages/basket/qty_bg.png) repeat-y 50% 0}
+
+#basket_contents .td_price,#basket_contents .td_total {width:75px;line-height:11px}
+#basket_contents .td_price small,#basket_contents .td_total small {display:block;font-size:10px;font-weight:normal}
+
+#basket_contents #warranty_info {display:none}
+#basket_contents #warranty_info p {margin:6px 2px;font-size:12px}
+#basket_contents #warranty_info a {font-weight:bold}
+
+#basket_primary .delivery {padding:8px;border-bottom:1px solid #eee}
+
+#basket_primary .delivery .country {float:left;margin:10px 0}
+#basket_primary .delivery .country label {float:left;width:85px;padding-top:3px}
+#basket_primary .delivery .country select {margin-bottom:12px}
+#basket_primary .delivery .service {float:right;margin:2px 0;font-size:11px;border-collapse:collapse;max-width:380px}
+#basket_primary .delivery .service td {padding:3px 0 3px 4px}
+#basket_primary .delivery .service .desc {font-size:13px}
+#basket_primary .delivery .service .price {padding-left:8px;font-size:13px}
+#basket_primary .delivery .service small {font-size:11px}
+#basket_primary .delivery .service label {display:block;max-width:280px;max-height:2.8em;overflow:hidden}
+
+#basket_primary .delivery .price {text-align:right;color:#aaa}
+#basket_primary .delivery .service .selected {color:#56a61d}
+#basket_primary .delivery input {text-align:middle}
+
+#basket_primary .delivery:after  {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+#basket_primary .delivery li {font-size:11px;margin:4px 0}
+#basket_primary .delivery select {width:150px;border:1px solid #ccc;background:none}
+#basket_primary  #ship_province {width:180px}
+#basket_primary .delivery .jp_del_icons {float:left;margin-right:5px}
+
+
+
+#basket_primary #qualify {position:relative; left:6px;}
+#basket_primary #qualify #freetext {color:#56a61d; font-weight:bold}
+
+#basket_primary #oos {position:relative; left:6px;}
+
+#basket_primary #row_message {width:350px}
+
+#basket_primary .order_total {margin:0;padding:20px 8px;color:#56a61d;text-align:right;clear:both}
+#basket_primary .order_total span {color:#000}
+
+#basket_primary .continue {margin:20px 0 0;padding:10px 0;font-weight:bold}
+#basket_primary .paypal {float:right;margin:20px 0}
+#basket_primary .jp {float:left}
+
+#basket_primary #map label {float:left;padding-top:12px}
+#basket_primary #map p {padding-left:5px;float:left}
+#basket_primary #map img {float:left;padding:8px 5px 0 5px}
+
+
+/* region tweaks */
+#region_za #basket_primary .delivery .service label {max-width:380px}
+#region_ch .price_ex_vat {margin:6px 0;padding:8px;font-size:11px;line-height:15px;font-weight:bold;color:#0098db;text-align:center;background:#f5fafc;border:1px solid #0098db;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}
+#basket_primary .note {margin:6px 0;padding:8px;font-size:14px;line-height:20px;border-top:1px solid #eee;border-bottom:1px solid #eee}
+
+/* voucher */
+#basket_primary #voucher {margin:0;padding: 10px 0}
+#basket_primary .voucher {float:right;height:28px;margin:0;padding-left:14px;line-height:26px;color:#fff;background:#56a61d;font-weight:bold;text-align:right}
+#basket_primary .voucher a {float:right;padding:8px 8px 7px;margin-left:14px;line-height:12px;border-left:1px solid #fff;text-align:center}
+#basket_primary .voucher a:hover {background:#900}
+#basket_primary .voucher img {display:block}
+#basket_primary #voucher_code {margin:4px 4px 0 0;width:200px}
+#voucher .error,#voucher .voucher_note  {margin:8px 0 0;font-size:13px;font-weight:bold;color:#0098db}
+#basket_primary ul,#basket_aside ul  {margin:0;padding:0;list-style:none}
+
+/* VAT */
+#basket_primary  #vat {padding:0 8px}
+#vat:after  {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+#vat .vat_total {float:right;padding:18px 0}
+#vat .vat_total strong {color:#56a61d;font-weight:normal}
+#vat .vat_registered {padding:18px 0 6px}
+#vat .vat_registered input {vertical-align:middle}
+#vat .vat_registered label {padding-right:8px}
+
+#vat .vat_registered #vatreg {vertical-align:-2px;margin-bottom:14px}
+#vat .vat_number {margin:12px 0 0 0}
+#vat .vat_number .field {width:275px;margin:-6px 0}
+#vat .vat_number .blur {font-style:italic;color:#8f999e}
+#vat  .business {float:left;width:550px;padding:8px 0}
+#vat  .vat_reg {padding:8px 0;clear:both} 
+#vat .vat_note {margin:8px 0;font-size:11px;color:#999}
+#vat .kr_vat_note {margin:8px 0 0 320px;font-size:11px;color:#999;width:500px}
+
+#primary_accessories:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+#primary_accessories ul {float:left;width:140px;overflow:hidden;height:186px;margin:0 16px 0 0;padding:0 5px;list-style:none;text-align:center}
+#primary_accessories .c4,#primary_accessories .c8,#primary_accessories .c12 {margin-right:0}
+#primary_accessories h4 {margin:0;font-size:11px;line-height:13px;max-height:40px;overflow:hidden}
+#primary_accessories h4 a {color:#001722;text-decoration:none}
+#primary_accessories h4 a:hover {color:#5f6a72;text-decoration:underline}
+#primary_accessories .title {margin:4px 0;font-size:11px;line-height:13px;max-height:40px;overflow:hidden}
+#primary_accessories .price {margin:4px 0;font-weight:bold;font-size:13px;color:#56a61d}
+#primary_accessories .image {width:100px;height:100px;margin:0 auto}
+
+/* right*/
+#basket_aside .order_total {padding:20px 8px;border-bottom:1px solid #eee;color:#56a61d;text-align:center}
+#basket_aside .order_total strong {font-size:18px}
+#basket_aside .checkouts  {text-align:center;margin-top:16px}
+#basket_aside  h3 {font-size:14px}
+#basket_aside .checkouts li {margin:12px 0}
+#basket_aside .payment .standard_co {margin:10px 0;padding:8px 0 0;text-align:center}
+#basket_aside .payment .method li {margin:5px 0}
+#basket_aside .recently_viewed {margin:20px 0;border-top:1px solid #eee;border-bottom:1px solid #eee}
+#basket_aside .cards {margin:0;padding:12px 0;text-align:center;font-size:11px;color:#999}
+#basket_aside .cards img {margin-left:5px;margin-bottom:-5px;vertical-align:top}
+#basket_aside .up {margin-left:18px}
+#basket_aside em {font-size:11px;color:#888}
+#basket_aside .note {padding:4px 8px;font-size:11px;line-height:15px;background:#f4f4f4;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px}
+#basket_aside .norway_note {padding:4px 8px;font-size:11px;line-height:15px;background:#fff4f4;color:#c00;font-weight:bold;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px}
+#basket_aside .card_note {margin:8px 0 4px;padding:4px 8px;font-size:11px;line-height:15px;background:#f4f4f4;color:#666;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px}
+
+
+/* regional tweaks */
+#region_cn #basket_aside #UnionPay {margin-bottom:30px}
+
+/* Pier */
+#pier_insurance {margin:12px 0}
+#pier_insurance h4 {margin:0;font-size:12px}
+#pier_insurance h4 a {font-weight:bold; text-decoration:underline; color:#0098db}
+#pier_insurance h4 a:hover{font-weight:bold; text-decoration:none}
+#pier_insurance h4 input {float:left;margin:3px 8px 8px 0;}
+
+#pier_insurance p {margin:0;padding:2px 0 0 22px; font-size:11px;color:#666}
+#pier_insurance p a {text-decoration:underline;color:#666}
+#pier_insurance p a:hover {text-decoration:none}
+#pier_insurance p strong {color:#000}
+
+/* HK Insurance */
+#hk_insurance {margin:12px 0}
+#hk_insurance h4 {margin:0;font-size:12px;clear:both}
+#hk_insurance h4 a {font-weight:bold; text-decoration:underline; color:#0098db}
+#hk_insurance h4 a:hover{font-weight:bold; text-decoration:none}
+#hk_insurance h4 input {float:left;margin:5px 8px 8px 0;}
+#hk_insurance h4 img {float:left;margin:-2px 4px 0 0}
+#hk_insurance h4 label {margin-top:1px}
+#hk_insurance h4 img.us_warranty {margin-top:0}
+
+#hk_insurance p {margin:0;padding:2px 0 0 22px; font-size:11px;color:#666}
+#hk_insurance p a {text-decoration:underline;color:#666}
+#hk_insurance p a:hover {text-decoration:none}
+#hk_insurance p strong {color:#000}
+
+#hk_insurance .copy {clear:both}
+
+/* empty basket */
+#empty {margin:30px 0;text-align:center}
+#empty h2 {font-size:20px;background:none;text-shadow:none;color:#5f6a72}
+#empty font {font-size:13px;color:#001722;letter-spacing:0;font-weight:normal;line-height:16px;color:#7f898f} /* arrgh font tag! */
+#empty .continue {margin-top:50px;font-weight:bold;font-size:16px;}
+#empty .continue a {padding:8px 18px;background:#0098db url(/j/8a/images/pages/basket/continue_bg.png) repeat-x 0 0;color:#fff;text-decoration:none;text-shadow:0 -1px 0 rgba(0,0,0,.3);-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;-moz-box-shadow:0 1px 6px rgba(0,0,0,.15);-webkit-box-shadow:0 1px 6px rgba(0,0,0,.15);box-shadow:0 1px 6px rgba(0,0,0,.15)}
+#empty .continue a:hover {text-decoration:underline}
+
+#region_cn #empty .continue a,#region_jp #empty .continue a,#region_kr #empty .continue a,#region_tw #empty .continue a  {font-size:20px}
+
+#agree_terms {margin:12px 0;font-size:11px}
+#agree_terms strong {color:#c00}
+#agree_terms .box {float:left;margin:0 6px 10px 0}
+#agree_terms label.error {display:block;float:none;width:auto;color:red;font-weight:bold;font-size:11px;zoom:1} /* < move IE6 fix */
+#agree_terms input.error {border-color:red;color:red;background:#f4f9fc}
+#agree_terms label.error {margin:12px 0;padding:6px 12px;border:1px solid red;background:#f4f9fC;text-align:center;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px}
+
+/* validation styles */
+#checkout label.error {display:block;float:none;width:auto;color:red;font-weight:bold;font-size:11px;zoom:1} /* < move IE6 fix */
+#checkout input.error,#checkout select.error {border-color:red;background:#f4f9fc}
+
+
+/*finance*/
+#finance_wrap {border-bottom: 1px dotted #ddd;border-top: 1px dotted #ddd;padding:16px 0}
+#finance_wrap h3 {margin:0 0 16px;text-align:center}
+#finance_button {width:272px;margin:0 auto;text-align:center;background:#337600;color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,.2);border-radius:10px 10px 6px 6px;box-shadow:0 2px 6px rgba(0,0,0,0)}
+#finance_button a {display:block;color:#fff;text-decoration:none}
+#finance_button h5,#finance_button h5 .arrow,#finance_button p {background:url(/j/8a/images/generic/finance/button.png) repeat-x 0 0}
+#finance_button h5 {margin:0;padding-left:10px;font-size:12px;line-height:13px;background-color:#58a618;border-radius:6px 6px 0 0}
+#finance_button h5 a {padding:5px 0}
+#finance_button h5 .arrow {display:inline-block;width:20px;height:12px;margin:1px 0 0 6px;vertical-align:top;background-position:0 -101px;background-repeat:no-repeat}
+#finance_button p {margin:0;font-size:11px;line-height:16px;background-position:0 -50px}
+#finance_button p a {padding:4px 0 3px}
+#finance_button .from_price {font-weight:bold;font-size:16px;letter-spacing:-1px}
+#finance_button sup {position:relative;top:3px;line-height:0;letter-spacing:0;font-size:11px}
+body:-moz-last-node #finance_button sup {font-size:10px;top:3px} /*tweak for firefox*/
+@media screen and (-webkit-min-device-pixel-ratio:0){#finance_button sup {font-size:10px;top:1px}}/*tweak for webkit*/
+#finance_button,#finance_button h5,#finance_button .arrow {-moz-transition:0.35s ease-out;-webkit-transition:0.35s ease-out;-o-transition:0.35s ease-out;transition:0.35s ease-out}
+#finance_button:hover {background-color:#4b9811;box-shadow:0 2px 4px rgba(0,0,0,.25)}
+#finance_button:hover h5 {background-color:#79d72c}
+#finance_button:hover .arrow {background-position:100% -101px;}
+
+/*p4l lightbox*/
+#basket #finance_quote {display:none} /*hide lightbox content by default*/
+#finance_quote {width:500px;padding-bottom:12px} /*set lightbox size - fancybox will resize to fit*/
+#finance_quote .finance_header {height:96px;background:#58a618 url(/j/8a/images/generic/finance/lb_title.png) no-repeat 25px 25px;box-shadow:0 1px 3px 1px rgba(0,0,0,.2)}
+#finance_quote .finance_header h4,#finance_quote .finance_header h5{margin:0;text-indent:-999em}
+#finance_quote .finance_calculator,#finance_quote .finance_terms  {margin:16px 16px 0}
+#finance_quote .finance_calculator h4 {margin:12px 0;font-size:13px}
+#finance_quote .finance_calculator ul {margin:0;padding:0;list-style:none;border-top:1px dashed #eee}
+#finance_quote .finance_calculator li {margin:0;padding:10px 4px;border-bottom:1px dashed #eee;clear:both}
+#finance_quote .finance_calculator li:after {content:".";display: block;height:0;clear:both;visibility:hidden}
+#finance_quote .finance_calculator select {float:right;width:200px;font-size:12px}
+#finance_quote .finance_calculator .label,#finance_quote .finance_calculator .line_total  {float:left;width:50%}
+#finance_quote .finance_calculator .line_total {text-align:right}
+#finance_quote .finance_calculator .p4l_monthly {font-weight:bold;color:#58a618;background:#f6fbf2}
+#finance_quote .finance_note {margin:0 16px;padding:8px 4px;font-size:11px;line-height:14px;background:#f9f9f9;border-bottom:1px dashed #eee}
+#finance_quote .finance_note img {display:block;margin:6px auto 4px}
+#finance_quote .finance_terms {font-size:10px;color:#888;line-height:13px}
+#finance_quote .finance_terms p {margin:6px 0;padding-left:124px}
+#finance_quote .finance_terms a {font-weight:bold}
+#finance_quote .finance_terms img {float:left;margin:10px 0}
+#finance_quote .finance_terms ul {padding-left:132px; padding-top:10px; list-style:square}
+#finance_quote .finance_footer {margin:10px}
+#finance_quote .finance_footer .v12-logo {float:left;margin:0 40px 0 20px}
+#finance_quote .finance_footer li {margin:6px 0}
+#finance_quote .finance_footer a {font-weight:bold}
+
+.vat-entry li {margin:6px 0} 
+.vat-entry label {display:inline-block;width:175px}
+.vat-entry #vat-entry-alert {display:none;margin:10px 0 0 188px;padding:5px 8px;color:#c00;font-size:11px;line-height:15px;width:290px;background:#fff4f4;border-left:4px solid #c00}
+.vat-entry #vat_countries {width:200px}
+.vat-entry .field {width:300px}
+
+/* KR Bank transfer */
+
+.kr-bt-info {margin-top:16px;padding-top:2px;border-top:1px dotted #ccc;clear:both}
+.kr-bt-info p {font-weight:bold}
+.kr-bank-details {width:100%;border-collapse;collapse;border:1px solid #f4f4f4;border-bottom:0}
+.kr-bank-details td {padding:6px 4px;border-bottom:1px solid #f4f4f4}
+.kr-bank-label {border-right:1px solid #f4f4f4}
+.kr-bank-info {font-weight:bold}
+
+.kr-bt-info {display:none}
+
