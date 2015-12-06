@@ -22,13 +22,13 @@ color: green;
 }
 
 .btn-Error {
- opacity: 0.4;
-    filter: alpha(opacity=40); /* For IE8 and earlier */
+ opacity: 0.3;
+    filter: alpha(opacity=30); /* For IE8 and earlier */
 }
 
-.btn-Peding {
- opacity: 0.4;
-    filter: alpha(opacity=40); /* For IE8 and earlier */
+.btn-Pending {
+ opacity: 0.3;
+    filter: alpha(opacity=30); /* For IE8 and earlier */
 }
 
 .btn-Paid {
@@ -60,9 +60,9 @@ color: green;
 								<td><span class="span-${orders.orderStatus}"><c:out value="${orders.orderStatus}" /></span></td>
 								<td><c:out value="${orders.orderTotal} Eur" /></td>
 								<td>
-								<button class="btn-${orders.orderStatus}" type="button" class="btn btn-default btn-sm">
+								<a href="http://localhost:8080/shopping/resources/wrox.rar" target="_blank"><button class="btn-${orders.orderStatus}" type="button" class="btn btn-default btn-sm">
 						          <span class="glyphicon glyphicon-download-alt"></span> Download
-						        </button>
+						        </button></a>
 								</td>
 								
 									

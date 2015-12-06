@@ -145,7 +145,7 @@ html,body {
 														</h2>
 													</a>
 													<p>
-														Eur.
+														&euro;
 														<c:out value="${catProds.price}" />
 													</p>
 													<c:url var="add" value="/addProduct">
@@ -162,7 +162,7 @@ html,body {
 															</h2>
 														</a>
 														<p>
-															Eur.
+															&euro;
 															<c:out value="${catProds.price}" />
 														</p>
 														<c:url var="add" value="/addProduct">
@@ -203,7 +203,7 @@ html,body {
 														</h2>
 													</a>
 													<p>
-														Eur.
+														&euro;
 														<c:out value="${subCatProds.price}" />
 													</p>
 													<c:url var="add" value="/addProduct">
@@ -220,7 +220,7 @@ html,body {
 															</h2>
 														</a>
 														<p>
-															Eur.
+															&euro;
 															<c:out value="${subCatProds.price}" />
 														</p>
 														<c:url var="add" value="/addProduct">
