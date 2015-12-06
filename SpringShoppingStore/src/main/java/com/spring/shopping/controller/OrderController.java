@@ -71,7 +71,7 @@ public class OrderController {
 		System.setProperty("jsse.enableSNIExtension", "false");
 		
 		Client client = ClientBuilder.newClient();
-		Entity payload = Entity.json("{\"merchantid\":\"1144922459128400102\",\"amount\":"+amount+",\"currency\":\"EUR\",\"phonenumber\":\""
+		Entity payload = Entity.json("{\"merchantid\":\"1144922459128400102\",\"amount\":1000,\"currency\":\"EUR\",\"phonenumber\":\""
 				+ creditCardForm.getCreditCardNumber()
 				+ "\",\"securitycode\":\""
 				+ creditCardForm.getName() + "\"}");
@@ -92,9 +92,9 @@ public class OrderController {
 			HttpServletRequest request, HttpServletResponse response2)
 			throws ParseException, IOException {
 		
-		String amm = request.getParameter("amount").split("\\.")[0];
-		int amount = Integer.parseInt(amm);
-		amount*=100;
+		//String amm = request.getParameter("amount").split("\\.")[0];
+		//int amount = Integer.parseInt(amm);
+		int amount=3000;
 		String sessionToken = getSessionToken(creditCardForm, amount);
 		
 		Client client = ClientBuilder.newClient();
@@ -104,7 +104,7 @@ public class OrderController {
 		obj.put("amount", amount);
 		obj.put("currency", "EUR");
 		obj.put("sessiontoken", Long.parseLong(sessionToken));
-		obj.put("purpose", "Online payment");
+		obj.put("purpose", "uCodeiSell Payment");
 		//obj.put("paymentreference", "aa10000006");
 		obj.put("orderid", "aa10000006");
 		//obj.put("secretkey", "aa10000005");
