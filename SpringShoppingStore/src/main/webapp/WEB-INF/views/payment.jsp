@@ -20,7 +20,7 @@ footer {
 body {
 	font-family: Segoe UI;
 	font-size: 14px;
-	background-color: gray;
+	background-color: white;
 }
 
 html,body {
@@ -57,7 +57,9 @@ html,body {
 }
 
 body {
-	margin-top: 20px;
+	font-family: Segoe UI;
+	font-size: 14px;
+	background-color: white;
 }
 
 .panel-title {
