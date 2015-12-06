@@ -25,4 +25,6 @@ public interface OrderService {
 	
 	public Order createOrder(CartService cartService, Customer customer, AddressForm address,
 			HttpServletRequest request, String transactionId, String mappStatus) throws ParseException;
+	
+	void updateOrder(Order order);
 }
