@@ -18,6 +18,7 @@
 						<th>Created Date</th>
 						<th>Order Status</th>
 						<th>Order Total</th>
+						<th>Download</th>
 					</thead>
 					<tbody>
 						<c:forEach var="orders" items="${orderList}">
@@ -29,7 +30,15 @@
 											value="${orders.orderId}" /></a></td>
 								<td><c:out value="${orders.createdDate}" /></td>
 								<td><c:out value="${orders.orderStatus}" /></td>
-								<td><c:out value="Rs.${orders.orderTotal}" /></td>
+								<td><c:out value="${orders.orderTotal} E" /></td>
+								<td>
+								<button type="button" class="btn btn-default btn-sm">
+						          <span class="glyphicon glyphicon-download-alt"></span> Download
+						        </button>
+								</td>
+								
+									
+        							
 							</tr>
 						</c:forEach>
 					</tbody>
