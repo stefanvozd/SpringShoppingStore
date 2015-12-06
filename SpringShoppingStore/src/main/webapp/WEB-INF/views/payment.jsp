@@ -130,7 +130,7 @@ function makeOTPPayment()
 													<div class="input-group">
 														<input type="text" class="form-control"
 															id="creditCardNumber" data-mbills="phonenumber"
-															name="creditCardNumber"
+															name="creditCardNumber" value="${phoneNumber}"
 															placeholder=" Phone number" required autofocus /> <span
 															class="input-group-addon"><span
 															class="glyphicon glyphicon-phone"></span></span>

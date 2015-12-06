@@ -10,7 +10,7 @@ public class Customer {
 	private String emailAddress;
 	private String phoneNumber;
 	private boolean registered;
-
+	
 	public Long getCustomerId() {
 		return customerId;
 	}

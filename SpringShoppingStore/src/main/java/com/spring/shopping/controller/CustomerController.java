@@ -88,6 +88,7 @@ public class CustomerController {
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String registerUser(
+			@RequestParam(value = "phoneNumber", required = true) String phoneNumber,
 			@RequestParam(value = "userName", required = true) String userName,
 			@RequestParam(value = "password", required = true) String password,
 			@RequestParam(value = "emailAddress", required = true) String email,

@@ -60,12 +60,16 @@
 							<form id="loginform" class="form-horizontal" action="login"
 								method="post">
 
+
+
 								<div style="margin-bottom: 25px" class="input-group">
 									<span class="input-group-addon"><i
 										class="glyphicon glyphicon-user"></i></span> <input id="userName"
 										type="text" class="form-control" name="userName" value=""
-										placeholder="userName">
+										placeholder="Petar Petrovic">
 								</div>
+
+
 
 								<div style="margin-bottom: 25px" class="input-group">
 									<span class="input-group-addon"><i
@@ -136,6 +140,15 @@
 									<p>Error:</p>
 									<span></span>
 								</div>
+								
+								<div class="form-group">
+									<label for="email" class="col-md-3 control-label">Phone number</label>
+									<div class="col-md-9">
+										<input type="text" class="form-control" name="phoneNumber"
+											placeholder="mBills phone number">
+									</div>
+								</div>
+
 								<div class="form-group">
 									<label for="email" class="col-md-3 control-label">Email</label>
 									<div class="col-md-9">
