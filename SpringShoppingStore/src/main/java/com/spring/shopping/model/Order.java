@@ -14,6 +14,7 @@ public class Order {
 	private Long customerId;
 	private Long addressId;
 	private Long transactionid;
+	private String  sellerPhoneNumber;
 
 	public Long getTransactionid() {
 		return transactionid;
@@ -97,6 +98,16 @@ public class Order {
 		}
 		
 		return "Error";
+	}
+
+
+
+	public String getSellerPhoneNumber() {
+		return sellerPhoneNumber;
+	}
+
+	public void setSellerPhoneNumber(String setSellerPhoneNumber) {
+		this.sellerPhoneNumber = setSellerPhoneNumber;
 	}
 
 }

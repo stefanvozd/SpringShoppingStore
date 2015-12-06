@@ -21,6 +21,7 @@ public class OrderMapper implements RowMapper<Order> {
 		order.setCustomerId(rs.getLong("Customer_Id"));
 		order.setAddressId(rs.getLong("Address_Id"));
 		order.setTransactionid(rs.getLong("transactionid"));
+		order.setSellerPhoneNumber(rs.getString("sellerPhoneNumber"));
 		return order;
 	}
 

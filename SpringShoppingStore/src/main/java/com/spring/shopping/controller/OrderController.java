@@ -72,7 +72,7 @@ public class OrderController {
 		System.setProperty("jsse.enableSNIExtension", "false");
 		
 		Client client = ClientBuilder.newClient();
-		Entity payload = Entity.json("{\"merchantid\":\"1144922459128400102\",\"amount\":1000,\"currency\":\"EUR\",\"phonenumber\":\""
+		Entity payload = Entity.json("{\"merchantid\":\"1144922459128400102\",\"amount\":" + amount +",\"currency\":\"EUR\",\"phonenumber\":\""
 				+ creditCardForm.getCreditCardNumber()
 				+ "\",\"securitycode\":\""
 				+ creditCardForm.getName() + "\"}");
@@ -94,7 +94,7 @@ public class OrderController {
 			throws ParseException, IOException {
 		
 		//String amm = request.getParameter("amount").split("\\.")[0];
-		int amount = Integer.parseInt(request.getParameter("amount"));
+		int amount = (int) Double.parseDouble(request.getParameter("amount"));
 		String sellerPhoneNumber = request.getParameter("sellerPhoneNumber");
 		String sessionToken = getSessionToken(creditCardForm, amount);
 		
@@ -123,9 +123,19 @@ public class OrderController {
 		  .post(payload);
 
 		
-		System.out.println("body:" + response.readEntity(String.class));
+		
+		String saleResponse = response.readEntity(String.class);
+		System.out.println("body:" + saleResponse);
 		System.out.println("status: " + response.getStatus());
 		System.out.println("headers: " + response.getHeaders());
+		
+		
+		
+		JSONObject jsonSaleResponse = new JSONObject(saleResponse);
+		String transactionId = (String) jsonSaleResponse.get("transactionid");
+		int status = (Integer) jsonSaleResponse.get("status");
+		
+		
 		session = SessionUtils.createSession(request);
 		// Retrieve Details about the Cart,Customer and Address Details
 		// used to create detailed Order
@@ -136,7 +146,7 @@ public class OrderController {
 		
 		if(customer!=null)
 		{
-			order = orderService.createOrder(cartService, customer, null,request);
+			order = orderService.createOrder(cartService, customer, null, request, transactionId, Order.mappStatus(status));
 			payAmountByCreditCard(creditCardForm, request);
 	
 			SessionUtils.setSessionVariables(order, request, "orderDetails");
@@ -159,7 +169,8 @@ public class OrderController {
 		else if (sellerPhoneNumber != null && sellerPhoneNumber.length() > 0)  {
 			CartData cartData = SessionUtils.getSessionVariables(request,
 					ControllerConstants.CART);
-			 orderService.createOrder(new BigDecimal(amount), sellerPhoneNumber, request);
+			 
+			orderService.createOrder(new BigDecimal(amount), sellerPhoneNumber, request, transactionId, Order.mappStatus(status));
 		}
 			return "successPayment";
 	}

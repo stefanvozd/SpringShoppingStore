@@ -166,7 +166,7 @@ html,body {
 									<div class="row">
 										<div class="col-xs-12 col-md-6">
 											<p class="lead">
-												&euro;
+												EUR
 												<c:out value="${featProds.price}" />
 											</p>
 										</div>

@@ -29,5 +29,5 @@ public interface OrderService {
 	
 	void updateOrder(Order order);
 	
-	Order createOrder(BigDecimal orderTotal, String sellPhoneNumber, HttpServletRequest request) throws ParseException;
+	Order createOrder(BigDecimal orderTotal, String sellPhoneNumber, HttpServletRequest request, String transactionId, String string) throws ParseException;
 }

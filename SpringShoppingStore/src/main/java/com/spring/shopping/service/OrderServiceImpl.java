@@ -62,7 +62,7 @@ public class OrderServiceImpl implements OrderService {
 	}
 	
 	@Override
-	public Order createOrder(BigDecimal orderTotal, String sellPhoneNumber,	HttpServletRequest request)		throws ParseException {
+	public Order createOrder(BigDecimal orderTotal, String sellPhoneNumber, HttpServletRequest request, String transactionId, String status) throws ParseException {
 		Date date = new Date();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		String formattedDate = dateFormat.format(date);
@@ -80,6 +80,8 @@ public class OrderServiceImpl implements OrderService {
 		order.setOrderStatus(PENDING_ORDER_STATUS);
 		order.setOrderTotal(orderTotal);
 		order.setSellerPhoneNumber(sellPhoneNumber);
+		order.setTransactionid(Long.parseLong(transactionId));
+		order.setOrderStatus(status);
 		orderRepository.createOrder(order, new ArrayList<OrderItem>(), null);
 		return order;
 	}
@@ -127,7 +129,7 @@ public class OrderServiceImpl implements OrderService {
 		order.setOrderId(orderId);
 		order.setCreatedDate(sqlDate);
 		order.setUpdatedDate(sqlDate);
-		order.setEmailAddress(customer.getEmailAddress());
+		order.setEmailAddress(" ");
 		order.setOrderStatus(PENDING_ORDER_STATUS);
 		CartData cartData = SessionUtils.getSessionVariables(request,
 				ControllerConstants.CART);

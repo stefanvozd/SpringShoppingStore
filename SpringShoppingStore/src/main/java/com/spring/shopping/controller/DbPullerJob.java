@@ -44,14 +44,19 @@ public class DbPullerJob {
 				orderService.updateOrder(order);
 	        	
 	        	if(mappStatus.equals("Paid")) {
-	        		List<Product> allOrderItems = orderService.getAllOrderItems(order);
-	        		for (Product product : allOrderItems) {
-						Long customerId = product.getCustomerId();
-						Customer customer = customerService.getCustomerById(customerId);
-						String phoneNumber = customer.getPhoneNumber();
-						sendMoney(phoneNumber, order.getOrderTotal().subtract(new BigDecimal(2)).intValue() );
-					}
-	        		// send money to sellers
+	        		
+	        		if (order.getSellerPhoneNumber() != null) {
+	        			sendMoney(order.getSellerPhoneNumber(), order.getOrderTotal().subtract(new BigDecimal(2)).intValue() );
+	        		}
+	        		else {
+		        		List<Product> allOrderItems = orderService.getAllOrderItems(order);
+		        		for (Product product : allOrderItems) {
+							Long customerId = product.getCustomerId();
+							Customer customer = customerService.getCustomerById(customerId);
+							String phoneNumber = customer.getPhoneNumber();
+							sendMoney(phoneNumber, order.getOrderTotal().subtract(new BigDecimal(2)).intValue() );
+						}
+	        		}
 	        	}
 			}
         	

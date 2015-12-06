@@ -55,7 +55,7 @@
 												</div>
 											</div>
 										</td>
-										<td class="col-sm-1 col-md-1 text-center"><strong>&euro;<c:out
+										<td class="col-sm-1 col-md-1 text-center"><strong>EUR<c:out
 													value="${product.price}" /></strong></td>
 										<c:url var="moveToCart" value="moveToCart">
 											<c:param name="productId" value="${product.productId}" />

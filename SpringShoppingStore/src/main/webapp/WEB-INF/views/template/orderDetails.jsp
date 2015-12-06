@@ -46,7 +46,7 @@
 										</div>
 									</div>
 								</td>
-								<td><strong><c:out value="&euro;${product.price}" /></strong></td>
+								<td><strong><c:out value="EUR${product.price}" /></strong></td>
 								<td><strong><c:out value="${order.orderStatus}" /></strong></td>
 
 							</tr>
