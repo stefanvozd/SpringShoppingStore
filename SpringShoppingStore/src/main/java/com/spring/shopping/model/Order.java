@@ -13,9 +13,9 @@ public class Order {
 	private BigDecimal orderTotal;
 	private Long customerId;
 	private Long addressId;
-	private Long transactionid;
+	private long transactionid;
 
-	public Long getTransactionid() {
+	public long getTransactionid() {
 		return transactionid;
 	}
 	

@@ -20,6 +20,7 @@ public class OrderMapper implements RowMapper<Order> {
 		order.setOrderTotal(rs.getBigDecimal("Order_SubTotal"));
 		order.setCustomerId(rs.getLong("Customer_Id"));
 		order.setAddressId(rs.getLong("Address_Id"));
+		order.setTransactionid(rs.getLong("transaction"));
 		return order;
 	}
 
