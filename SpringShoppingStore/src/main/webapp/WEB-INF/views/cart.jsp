@@ -137,9 +137,9 @@ html,body {
 														class="updateQuantity btn btn-default">Update</button>
 												</td>
 											</form>
-											<td class="col-sm-1 col-md-1 text-center"><strong>Eur.<c:out
+											<td class="col-sm-1 col-md-1 text-center"><strong>&euro;<c:out
 														value="${list.product.price}" /></strong></td>
-											<td class="col-sm-1 col-md-1 text-center"><strong>Eur.<c:out
+											<td class="col-sm-1 col-md-1 text-center"><strong>&euro;<c:out
 														value="${list.total}" /></strong></td>
 											<td class="col-sm-1 col-md-1"><c:url var="remove"
 													value="remove">
@@ -162,7 +162,7 @@ html,body {
 										<td> </td>
 										<td><h5>Subtotal</h5></td>
 										<td class="text-right"><h5>
-												<strong>Eur.<c:out value="${cart.total}" /></strong>
+												<strong>&euro;<c:out value="${cart.total}" /></strong>
 											</h5></td>
 									</tr>
 									<tr>
@@ -171,7 +171,7 @@ html,body {
 										<td> </td>
 										<td><h3>Total</h3></td>
 										<td class="text-right"><h3>
-												<strong>Eur.<c:out value="${cart.total}" /></strong>
+												<strong>&euro;<c:out value="${cart.total}" /></strong>
 											</h3></td>
 									</tr>
 									<tr>

@@ -93,6 +93,7 @@ public class OrderController {
 			HttpServletRequest request, HttpServletResponse response2)
 			throws ParseException, IOException {
 		
+		//String amm = request.getParameter("amount").split("\\.")[0];
 		int amount = Integer.parseInt(request.getParameter("amount"));
 		String sellerPhoneNumber = request.getParameter("sellerPhoneNumber");
 		String sessionToken = getSessionToken(creditCardForm, amount);
@@ -101,10 +102,10 @@ public class OrderController {
 		JSONObject obj = new JSONObject();
 		JSONObject auth = new JSONObject();
 		obj.put("apikey", "aa10000005");
-		obj.put("amount", 1000);
+		obj.put("amount", amount);
 		obj.put("currency", "EUR");
 		obj.put("sessiontoken", Long.parseLong(sessionToken));
-		obj.put("purpose", "Online payment");
+		obj.put("purpose", "uCodeiSell Payment");
 		//obj.put("paymentreference", "aa10000006");
 		obj.put("orderid", "aa10000006");
 		//obj.put("secretkey", "aa10000005");

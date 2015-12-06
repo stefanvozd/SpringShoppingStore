@@ -149,7 +149,7 @@ $(function() {
 													<!-- name="name" -->
 													<label for="cardNumber"> SECURITY CODE</label>
 													<div class="input-group">
-														<input type="password" class="form-control" id="name" data-mbills="securitycode"
+														<input type="text" class="form-control" id="name" data-mbills="securitycode"
 															 name="name" placeholder=" Security code" required autofocus />
 														<span class="input-group-addon"><span
 															class="glyphicon glyphicon-lock"></span></span>

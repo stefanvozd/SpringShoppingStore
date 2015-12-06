@@ -72,7 +72,7 @@ public class CheckoutController {
 		return "redirect:checkout";
 	}
 
-	@RequestMapping(value = "/payment", method = RequestMethod.POST)
+	@RequestMapping(value = "/payment", method = RequestMethod.GET)
 	public String getPaymentForm(Model model, HttpServletRequest request) {
 		session = SessionUtils.createSession(request);
 		 try{
@@ -86,7 +86,7 @@ public class CheckoutController {
 		return "payment";
 	}
 	
-	@RequestMapping(value = "/paymentGateway", method = RequestMethod.POST)
+	@RequestMapping(value = "/payment", method = RequestMethod.POST)
 	public String postPaymentForm(Model model, HttpServletRequest request) {
 		session = SessionUtils.createSession(request);
 		 
@@ -94,6 +94,17 @@ public class CheckoutController {
 		 String phoneNumber = request.getParameter("phoneNumber");
 			 model.addAttribute("amount", amount);
 			 model.addAttribute("sellerPhoneNumber", phoneNumber);
+		 
+		 
+		return "payment";
+	}
+	
+	@RequestMapping(value = "/paymentGateway", method = RequestMethod.POST)
+	public String postGatewayPaymentForm(Model model, HttpServletRequest request) {
+		session = SessionUtils.createSession(request);
+		 
+		 String amount = request.getParameter("amount");
+			 model.addAttribute("amount", amount);
 		 
 		 
 		return "payment";

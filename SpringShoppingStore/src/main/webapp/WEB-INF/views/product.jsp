@@ -213,7 +213,7 @@
 								</div>
 								<p>Web ID: 1089772</p>
 								<span> <span class="product-price"> <c:out
-											value="Eur.${product.price}" />
+											value="&euro;${product.price}" />
 								</span> <a href="${add}" role="button" class="btn btn-default cart">
 										<i class="fa fa-shopping-cart"></i> Add to cart
 								</a> <a href="${addToWishlist}" role="button"
