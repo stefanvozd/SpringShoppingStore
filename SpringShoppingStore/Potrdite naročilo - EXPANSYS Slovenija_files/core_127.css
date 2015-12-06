@@ -1,0 +1,852 @@
+﻿/* Expansys/8a/core */
+html {background:#e5e7e8 url(/j/8a/images/core/layout/html_bg.png) repeat-y 50% 0}
+body {margin:0;padding-top:50px;color:#001722;font:13px/1.2em verdana,sans-serif;}
+img {border:0}
+
+#region_jp {font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;}
+
+a {color:#0080b9}
+a:hover {color:#222;text-decoration:none}
+
+.e_survey {
+ text-align:center
+}
+
+.e_survey-title {
+ font-weight:bold;
+ font-size:22px;
+ line-height:1.2;
+ color:#fff;
+ background:#0098db;
+ padding:12px 10px;
+ margin-bottom:10px;
+}
+
+.e_survey-intro {
+ font-size:12px;
+ color:#666;
+ margin:20px 0;
+}
+
+.e_survey-button a {
+ display:inline-block;
+ margin-bottom:5px;
+ padding:12px;
+ line-height:1.2;
+ background-color:#0098db;
+ font-weight:bold;
+ text-decoration:none;
+ font-size:16px;
+ color:#fff;
+ box-shadow:3px 3px 0 rgba(0,0,0,.1)
+}
+
+.e_survey-button a:hover {
+ background-color:#1db0f0;
+}
+
+
+/* helpers */
+.reset-list {margin:0;padding:0;list-style:none}
+.tk-futura-pt {-webkit-font-smoothing: antialiased} 
+#q {-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px} /* 4px */ 
+#search,#mini_basket {-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px} /* 8px */ 
+
+/* Core sprite */
+#search,#search #submit,#mini_basket,#nav .new,#logo,#footer .nl_signup_button,#topnav .icon,#footer .icon {background:url(/j/8a/images/core/core-sprite.png) no-repeat 0 0}
+
+body,#footer_wrap {background:url(/j/8a/images/core/layout/body_bg_ends.png) no-repeat 50% -290px}
+#outer {position:relative;top:10px;margin:0 auto;padding-bottom:4px;background:url(/j/8a/images/core/layout/body_bg.png) repeat-y 50% 0}
+#wrap {margin:0 auto;width:980px;background:#fff}
+#outer:after,#wrap:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+
+#topnav {position:absolute;left:50%;top:5px;width:980px;height:34px;margin:0 0 0 -490px;padding:0;list-style:none;font-size:11px;text-align:center;line-height:32px;text-transform:uppercase}
+#topnav li {position:absolute;top:0;color:#a6b6be}
+#topnav strong,#topnav .c1 a,#topnav .c2 a {padding:0 6px 0 0;color:#5f6a72;text-decoration:none}
+#topnav a:hover {color:#001722;text-decoration:underline}
+#topnav .c1 {left:0}
+#topnav .c2 {left:289px;width:407px;text-align:center}
+#topnav .c2 a {font-weight:bold}
+#topnav .c2 .icon {padding:0}
+#topnav .icon {display:inline-block;width:30px;height:30px;overflow:hidden;margin:2px 0 0 1px;padding:0;line-height:999em;vertical-align:-11px}
+#topnav .icon:hover {opacity:.8}
+#topnav .c3 {right:0;width:250px;color:#001722;text-align:right;line-height:14px}
+#topnav .country {position:absolute;top:3px;right:50px;color:#5f6a72;text-decoration:none}
+#topnav .country_cn {color:#5f6a72;text-decoration:none}
+#topnav .flag {position:relative;top:2px;right:-1px;vertical-align:middle}
+#topnav .change {display:block;font-size:10px;font-weight:bold;text-transform:none;color:#a5acaf}
+#topnav a:hover .change {color:#5f6a72}
+/*social icon defaults*/
+#topnav .tw,#footer .tw {background-position:-394px 0}
+#topnav .fb,#footer .fb {background-position:-429px 0}
+#topnav .yt,#footer .yt {background-position:-394px -33px}
+#topnav .gp,#footer .gp {background-position:-429px -33px}
+/* Region tweaks */
+#region_uk #topnav .c2 {left:279px;width:420px}
+#region_cn #topnav .c1 {font-size:12px}
+/*#region_cn #topnav .c2 {left:232px;width:516px}
+#region_cn .icon {width:32px;height:32px;margin:-1px 0 0;padding:0;background:url(/j/8a/images/core/header/cn_social_icons_01.png) no-repeat 0 0}*/
+#region_cn .weibo,#region_cn .qq,#region_cn .youku {background:url(/j/8a/images/core/header/cn_social_icons_02.png) no-repeat 0 0}
+#region_cn .qq {background-position:-34px 0}
+#region_cn .youku {background-position:-68px 0}
+#region_cn .qq-live-chat {background-position:0 0;background:url(/j/8a/images/core/header/icon_qq_93x30.png) no-repeat 0 0;cursor:pointer}
+#region_cn .icon {width:93px;height:32px}
+#region_hk .youku,#region_hk .tudou {background:url(/j/8a/images/core/header/hk-social.png) no-repeat 0 0}
+#region_hk .tudou {background-position:-34px 0}
+#region_kr #topnav .c3 {width:160px}
+#region_kr #topnav .c2 {left:200px;width:620px}
+#region_kr .naver,#region_kr .gmarket {background:url(/j/8a/images/core/header/kr_social_icons.png) no-repeat 0 0}
+#region_kr .gmarket {background-position:-34px 0} 
+#region_hk .instagram, #region_jp .instagram, #region_kr .instagram {background:url(/j/8a/images/core/header/instagram.png) no-repeat 0 0}
+#region_tw #topnav .c1 {font-size:14px}
+#region_tw #topnav .c2 {left:202px;width:576px}
+#region_tw .tw_skype {vertical-align:middle;padding-bottom:2px}
+#region_th #topnav .c1 {font-size:14px}
+#region_hk #topnav .c2 {left:270px;width:500px}
+#region_hk #topnav .hk-contact-info {float:left;width:360px}
+#region_hk #topnav .hk-contact-info .ci-hk,#region_hk #topnav .hk-contact-info .ci-cn {display:block;line-height:16px}
+#region_hk #topnav .contact_info1 {margin:-20px 30px 5px 0}
+#region_hk #topnav .contact_info2 {float:left;margin:-17px 0 0 12px}
+#region_au #topnav .c2, #region_nz #topnav .c2, #region_sg #topnav .c2, #region_th #topnav .c2, #region_my #topnav .c2, #region_ph #topnav .c2,#region_fr #topnav .c2 {left:267px;width:446px}
+#region_za #topnav .c2 {left:262px;width:466px}
+#region_jp #topnav .c2,#region_cn #topnav .c2 {left:229px;width:522px}
+#region_jp .mixi {background-position:0 0;background-image:url(/j/8a/images/core/header/jp_mixi_icon.png)}
+
+.lang_gr #topnav,.lang_gr #footer h3,.lang_gr #footer .content {text-transform:none}
+
+/* -= Header =- */
+#header {position:relative;width:980px;margin:0 auto;padding-top:96px}
+#header a {outline:0}
+#logo {position:absolute;top:14px;left:0;width:233px;height:61px;margin:0;text-indent:-999em;background-position:0 0}
+#region_fr #logo {background:url(/j/8a/images/core/header/logo_ast.png) no-repeat 0 0}
+#region_hk #logo,#region_cn #logo  {height:58px;background:url(/j/8a/images/core/header/logo_cn2.png) no-repeat 0 0}
+#region_tw #logo {height:60px;background:url(/j/8a/images/core/header/logo_tw.png) no-repeat 0 0}
+
+/* -= Search =- */
+#search {position:absolute;top:9px;left:282px;width:416px;height:44px;background-color:#0098db;background-position:0 -65px}
+#search #q {width:346px;margin:4px;padding:6px 56px 6px 6px;height:24px;font-size:16px;line-height:24px;border:0;background:none}
+#search #submit {position:absolute;top:6px;right:5px;height:32px;width:45px;border:none;cursor:pointer;text-indent:200%;white-space:nowrap;overflow:hidden;background-color:transparent;background-position:-366px -71px}
+#top_search {position:absolute;top:45px;left:252px;width:476px;height:15px;overflow:hidden;font-size:13px;line-height:13px;text-align:center;color:#a5acaf}
+#top_search a {color:#a5acaf;font-weight:bold;text-decoration:none;white-space:nowrap}
+#top_search a:hover {color:#5e6a71;text-decoration:underline}
+
+/*search auto suggest*/
+.ac_results {margin-top:-2px;padding:0;border:2px solid #18a9ea;background-color:white;overflow:hidden;z-index:99999;-moz-border-radius-bottomleft:8px;-moz-border-radius-bottomright:8px;-moz-box-shadow:0 3px 10px rgba(0,0,0,0.35);-webkit-border-bottom-left-radius:8px;-webkit-border-bottom-right-radius:8px;-webkit-box-shadow:0 3px 8px rgba(0,0,0,0.25)}
+.ac_results ul {width:100%;margin:0 0 0 -40px}
+.ac_results li {padding:3px 5px;font-size:14px;font-family:arial,verdana,sans-serif;color:#098bc3;overflow:hidden}
+.ac_results li.ac_odd {background-color:#e0edf5}
+.ac_results li.ac_over {background-color:#098bc3;color:#fff}
+.ac_results li:hover {cursor:pointer}
+
+#mini_basket {position:absolute;top:9px;left:727px;width:122px;height:44px;background-color:#001722;background-position:-233px 0}
+#mini_basket .count {position:absolute;top:-18px;left:-18px;width:37px;height:39px;z-index:10;background:url(/j/8a/images/core/mini_basket/count/1-10.png) no-repeat 0 0}
+#mini_basket .go {position:absolute;top:4px;right:4px;z-index:5}
+#mini_basket .i1 {background-position:0 0}
+#mini_basket .i2 {background-position:0 -40px}
+#mini_basket .i3 {background-position:0 -80px}
+#mini_basket .i4 {background-position:0 -120px}
+#mini_basket .i5 {background-position:0 -160px}
+#mini_basket .i6 {background-position:0 -200px}
+#mini_basket .i7 {background-position:0 -240px}
+#mini_basket .i8 {background-position:0 -280px}
+#mini_basket .i9 {background-position:0 -320px}
+#mini_basket .i9p {background-position:0 -360px}
+#mini_basket a {display:block;width:122px;height:44px}
+
+#newsletter,#specials {position:absolute;top:9px;right:0;width:117px;height:44px}
+#header #dotd {position:absolute;top:9px;right:0;width:117px;height:44px}
+#header_dotd_counter {position:absolute;bottom:-10px;left:50%;margin-left:-40px;width:80px;height:19px;background:url(/j/8a/images/core/header/dotd/bg-dotd-counter_01.png) no-repeat 0 0;color:#fff;font-size:12px;font-weight:bold;line-height:18px;text-align:center}
+
+/* ---- nav v1 ---- */
+
+/* Primary nav */
+#nav {position:relative;width:980px;height:36px;margin:0 0 12px}
+#nav,#nav .menu {background:url(/j/8a/images/core/nav/menu_bg_01.png) no-repeat -999px -999px} /* < cache dropdown BG */
+#nav ul {margin:0;padding:0;list-style:none}
+#nav a {position:relative;float:left;height:36px;overflow:hidden;border-left:2px solid #fff;font-size:11px;font-weight:bold;text-decoration:none;line-height:36px;color:#fff;text-align:center;background:#069bdc}
+#n_home a {width:44px;border:0;font-size:10px;background:#001722}
+#nav .bg {position:absolute;top:0;left:0;height:36px;width:100%;background-color:#0098db;z-index:5;transition:background-color .25s ease-out}
+#n_home .bg {background-color:#001722}
+#nav a:hover .bg, #nav li:hover .bg {background-color:#007cb2} 
+#n_home a:hover .bg {background:#143b4d}
+
+/* labels (default to EN) */
+#nav .lab {position:absolute;top:0;left:0;height:36px;background:url(/j/8a/images/core/nav/labels/en_02.png) no-repeat 50% 0;z-index:10}
+#n_home .lab {width:44px;background-position:50.5% 0}
+#n_smartphones .nitem {width:134px;background-position:50% -36px}
+#n_tablet_pcs .nitem {width:84px;background-position:50% -72px}
+#n_laptops .nitem {width:91px;background-position:50% -108px}
+#n_computing .nitem {width:118px;background-position:50% -144px}
+#n_cameras .nitem {width:100px;background-position:50% -180px}
+#n_smart_home .nitem {width:131px;background-position:50% -216px}
+#n_satnav .nitem {width:58px;background-position:50% -252px}
+#n_accessories .nitem {width:121px;background-position:50% -288px}
+#n_top20 .nitem {width:81px;background-position:50% -324px}
+#n_tv_and_audio .nitem {background-position:50% -216px}
+
+/* USA! & CA */
+.lang_us #nav .lab {background-image:url(/j/8a/images/core/nav/labels/us_02.png)}
+.lang_us #n_smartphones .nitem {width:124px;background-position:50% -37px}
+.lang_us #n_tablets_and_computers .nitem {width:181px;background-position:50% -73px}
+.lang_us #n_accessories .nitem {width:111px;background-position:50% -109px}
+.lang_us #n_audio .nitem {width:69px;background-position:50% -145px}
+.lang_us #n_watches .nitem {width:85px;background-position:50% -181px}
+.lang_us #n_gadgets .nitem {width:86px;background-position:50% -217px}
+.lang_us #n_smart_home .nitem {width:118px;background-position:50% -253px}
+.lang_us #n_action .nitem {width:69px;background-position:50% -289px}
+.lang_us #n_top20 .nitem {width:74px;background-position:50% -325px}
+
+#region_br #nav .lab {background-image:url(/j/8a/images/core/nav/labels/us_02.png)}
+#region_br #n_smartphones .nitem {width:124px;background-position:50% -37px}
+#region_br #n_tablets_and_computers .nitem {width:181px;background-position:50% -73px}
+#region_br #n_accessories .nitem {width:111px;background-position:50% -109px}
+#region_br #n_audio .nitem {width:69px;background-position:50% -145px}
+#region_br #n_watches .nitem {width:85px;background-position:50% -181px}
+#region_br #n_gadgets .nitem {width:86px;background-position:50% -217px}
+#region_br #n_smart_home .nitem {width:118px;background-position:50% -253px}
+#region_br #n_action .nitem {width:69px;background-position:50% -289px}
+#region_br #n_top20 .nitem {width:74px;background-position:50% -325px}
+
+/* Asia/EN */
+#nav .asia .lab {background-image:url(/j/8a/images/core/nav/labels/asia_en_05.png)}
+.asia #n_smartphones .nitem {width:152px;background-position:50% -36px}
+.asia #n_tablet_pcs .nitem {width:120px;background-position:50% -72px}
+.asia #n_audio .nitem {width:80px;background-position:50% -108px}
+.asia #n_cameras .nitem {width:106px;background-position:50% -144px}
+.asia #n_gadgets .nitem {width:154px;background-position:50% -180px}
+.asia #n_watches .nitem {width:100px;background-position:50% -216px}
+.asia #n_accessories .nitem {width:124px;background-position:50% -252px}
+.asia #n_top20 .nitem {width:84px;background-position:50% -288px}
+
+
+/* MX -- McHack with fries (MX using Asia nav, but now need US-ES labels) */
+#region_mx #nav .asia .lab {background-image:url(/j/8a/images/core/nav/labels/mx_01.png)}
+#region_mx #n_smartphones .nitem {width:158px;background-position:50% -36px}
+#region_mx #n_tablet_pcs .nitem {width:80px;background-position:50% -72px}
+#region_mx #n_accessories .nitem {width:94px;background-position:50% -108px}
+#region_mx #n_audio .nitem {width:60px;background-position:50% -144px}
+#region_mx #n_watches .nitem {width:70px;background-position:50% -180px}
+#region_mx #n_gadgets .nitem {width:186px;background-position:50% -216px}
+#region_mx #n_computing .nitem {width:110px;background-position:50% -252px}
+#region_mx #n_top20 .nitem {width:162px;background-position:50% -288px}
+
+
+/* CN */
+#region_cn #nav .lab {background-image:url(/j/8a/images/core/nav/labels/cn_07.png)}
+#region_cn #nav .nitem {width:115px} 
+#region_cn #n_home .nitem {width:44px}
+/*#region_cn #n_watches .nitem {width:80px}*/
+
+/* TW/ZH */
+.lang_zh #nav .lab {background-image:url(/j/8a/images/core/nav/labels/zh_05.png)}
+.lang_zh #nav .nitem {width:112px} 
+.lang_zh #n_home .nitem {width:44px}
+.lang_zh #n_gadgets .nitem {width:136px}
+
+/* JP */
+#region_jp #nav .lab {background-image:url(/j/8a/images/core/nav/labels/jp_07.png)}
+#region_jp #n_smartphones .nitem {width:141px}
+#region_jp #n_tablet_pcs .nitem {width:99px}
+#region_jp #n_accessories .nitem {width:98px}
+#region_jp #n_audio .nitem {width:100px}
+#region_jp #n_watches .nitem {width:158px}
+#region_jp #n_gadgets .nitem {width:174px}
+#region_jp #n_cameras .nitem {width:66px}
+#region_jp #n_top20 .nitem {width:84px}
+
+/* KR */
+#region_kr #nav .lab {background-image:url(/j/8a/images/core/nav/labels/kr_04.png)}
+#region_kr #n_smartphones .nitem {width:98px}
+#region_kr #n_tablet_pcs .nitem {width:98px}
+#region_kr #n_audio .nitem {width:96px}
+#region_kr #n_cameras .nitem {width:94px}
+#region_kr #n_gadgets .nitem {width:182px}
+#region_kr #n_watches .nitem {width:70px}
+#region_kr #n_accessories .nitem {width:112px}
+#region_kr #n_top20 .nitem {width:170px}
+
+/* TH */
+#region_th #nav .lab {background-image:url(/j/8a/images/core/nav/labels/th.png)}
+#region_th #n_smartphones .nitem {width:134px}
+#region_th #n_tablet_pcs .nitem {width:114px}
+#region_th #n_audio .nitem {width:104px}
+#region_th #n_cameras .nitem {width:114px}
+#region_th #n_gadgets .nitem {width:126px}
+#region_th #n_watches .nitem {width:120px}
+#region_th #n_accessories .nitem {width:116px}
+#region_th #n_top20 .nitem {width:92px}
+
+#n_accessories a,#n_gadgets a,#n_smart_home a,#n_tablets_and_computers a,#n_action a {overflow:visible}
+#nav .new {position:absolute;top:-13px;left:4px;padding:5px 10px;font-size:10px;text-shadow:0 -1px 0 rgba(0,0,0,.3);line-height:10px;background-color:#59a718;background-position:-233px -44px;text-transform:uppercase;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;z-index:500;-moz-box-shadow:0 1px 3px rgba(0,0,0,.2);-webkit-box-shadow:0 1px 3px rgba(0,0,0,.2);box-shadow:0 1px 3px rgba(0,0,0,.2)}
+
+/* -= Dropdown nav =- */
+#nav .menu {display:none}
+#nav .menu {position:absolute;top:36px;left:0;width:980px;color:#fff;background-repeat:repeat-x;background-position:0 100%;-moz-box-shadow:0 3px 4px rgba(0,0,0,.4);-webkit-box-shadow:0 3px 4px rgba(0,0,0,.4);z-index:100}
+#nav .menu a {position:static;float:none;background:0;border:none;width:auto;font-size:13px;line-height:18px;font-weight:normal}
+#nav .menu a:hover {text-decoration:underline}
+#nav .menu h4 {margin:4px 0 2px;padding:0 8px 7px;font-size:16px;font-weight:normal;border-bottom:3px dotted #4598bc;color:#fff}
+#nav .menu ul {margin:6px 8px 12px}
+#nav .menu li {margin:1px 0;text-shadow:0 1px 0 rgba(0,0,0,.3)}
+#nav .c1,#nav .c2,#nav .c3,#nav .c4 {float:left;width:233px;min-height:225px;margin:4px 16px 4px 0}
+#nav .c4 {margin-right:0} 
+#nav .menu .menu_l2,#nav .menu .menu_l3 {margin:3px 0 0 24px;font-size:10px;list-style:square} 
+#nav .menu .menu_l2 li {margin:0;color:#c0e3f3}
+#nav .menu .menu_l2 a {font-size:11px;line-height:11px;color:#c0e3f3}
+#nav .price li {float:left;width:100px;margin:0 8px 0 0;padding:0}
+#nav .price:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0} 
+#nav .price a {font-size:11px}
+#nav .menu .logo_grid {margin:4px 0 0 -4px;padding:3px 0 6px 0}
+#nav .menu .logo_grid:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0} 
+#nav .logo_grid li {float:left;padding:0;width:56px;margin:2px 6px 1px 5px;padding:2px;border:1px solid #4598bc}
+#nav .logo_grid li:hover {border-color:#d1e9f4}
+#nav .logo_grid img {margin:0;padding:3px;background:#fff;vertical-align:bottom} 
+#nav .c4 h4 {margin-bottom:10px}
+#nav .pop_items .title {margin:8px 0 0}
+#header #nav .title a {width:216px}
+#nav .pop_items .title a {display:block;height:auto;padding:0 0 9px;border-bottom:1px dotted #4598bc;max-height:36px;overflow:hidden;font-size:13px;line-height:13px;text-align:left;}
+
+/* region tweaks */
+#region_ae #nav .price li,#region_se #nav .price li,#region_ch #n_laptops .price li,#region_ch #n_tv_and_audio .price li,#region_dk #nav .price li,#region_hu #nav .price li {width:100%}
+#region_cn #nav .menu li ,#region_jp #nav .menu li {text-shadow:none}
+#region_cn #nav .menu a ,#region_jp #nav .menu a {font-size:15px;line-height:21px}
+#region_cn .menu .menu_l2 a,#region_jp .menu .menu_l2 a {font-size:53px;line-height:17px}
+#region_tw #nav .c1 a,#region_tw #nav .c2 a {font-size:16px;line-height:24px}
+#region_tw #nav .menu_l2 a {font-size:14px;line-height:21px}
+#region_tw #nav .menu h4 {font-size:18px;font-weight:bold}
+
+#nav .footer {padding:4px 8px 5px;background:#001722;clear:both}
+#nav .footer ul {margin:0}
+#nav .footer a {font-weight:bold}
+#nav .footer .index {float:left}
+#nav .footer .close {float:right;cursor:pointer}
+#nav .footer .close a {padding:3px 23px;background:url(/j/8a/images/core/nav/menu_close.png) no-repeat 100% 1px}
+#nav .footer:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0} 
+
+/* ---- end nav v1 ---- */
+
+/* ---- nav v2 ---- */
+#nav-v2 {width:980px;border-collapse:collapse;margin:0 0 16px}
+#nav-v2:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+#nav-v2 .nitem {position:relative;float:left;border-left:2px solid #fff;}
+#nav-v2 .nlink {display:block;color:#fff;height:36px;line-height:35px;font-weight:bold;text-indent:-999em;text-align:center;white-space:nowrap;text-decoration:none;text-shadow:0 -1px 0 rgba(0,0,0,.15)}
+/*#nav-v2 .last {border-radius:0 4px 4px 0}*/
+#nav-v2 .nhome,.nitem {-moz-transition:0.2s ease-out;-webkit-transition:0.2s ease-out;-o-transition:0.2s ease-out;transition:0.2s ease-out;}
+
+#nav-v2 .nitem { /* gradient test */
+background-color:#0098db;
+}
+
+#nav-v2 .nhome {width:44px;border:none;background-color:#001722;text-indent:-999em;}
+#nav-v2 .nitem:hover {background-color:#11b7f9}
+#nav-v2 .nhome:hover {background-color:#143b4d}
+#nav-v2 .nhighlight {background-color:#58a618}
+#nav-v2 .nhighlight:hover {background-color:#6bc323}
+
+#nav-v2 .new {position:absolute;top:-13px;left:0;padding:4px 6px;font-size:9px;line-height:10px;background-color:#59a718;text-transform:uppercase;index:500;text-indent:0;box-shadow:2px 2px 0 rgba(0,0,0,.15)}
+
+/* default */
+.nav-v2 .nlink {background-image:url(/j/8a/images/core/nav/labels/en_07.png);background-position:50% 0}
+.nav-v2 .nhome .nlink {background-position:-79px 0}
+.nav-v2 .nsmartphones {width:144px;background-position:50% -36px}
+.nav-v2 .nphablets {width:106px;background-position:50% -72px}
+.nav-v2 .ntablets {width:91px;background-position:50% -108px}
+.nav-v2 .naccessories {width:131px;background-position:50% -144px}
+.nav-v2 .nlife {width:62px;background-position:50% -180px}
+.nav-v2 .nwork {width:75px;background-position:50% -216px}
+.nav-v2 .naction {width:85px;background-position:50% -252px}
+.nav-v2 .nsmarthome {width:137px;background-position:50% -288px}
+.nav-v2 .ntop20 {width:87px;border-radius:0 4px 4px 0;background-position:50% -324px}
+
+/* UK */
+#region_uk .nlink,#region_ie .nlink  {background-image:url(/j/8a/images/core/nav/labels/uk_10.png);background-position:50% 0}
+#region_uk .nhome .nlink,#region_ie .nhome .nlink {background-position:50% 0}
+#region_uk .nsmartphones,#region_ie .nsmartphones {width:130px;background-position:50% -37px}
+#region_uk .nphablets,#region_ie .nphablets {width:93px;background-position:50% -73px}
+#region_uk .ntablets,#region_ie .ntablets {width:82px;background-position:50% -109px}
+#region_uk .nwatches,#region_ie .nwatches {width:93px;background-position:50% -145px}
+#region_uk .naccessories,#region_ie .naccessories {width:117px;background-position:50% -181px}
+#region_uk .nsmarthome,#region_ie .nsmarthome {width:124px;background-position:50% -217px}
+#region_uk .nlife,#region_ie .nlife {width:54px;background-position:50% -253px}
+#region_uk .naction,#region_ie .naction {width:75px;background-position:50% -289px}
+#region_uk .nwork,#region_ie .nwork {width:69px;background-position:50% -325px}
+#region_uk .ntop20,#region_ie .ntop20 {width:79px;background-position:50% -361px}
+
+
+/* FR */
+.lang_fr .nlink {background-image:url(/j/8a/images/core/nav/labels/fr_10.png);background-position:50% 0}
+.lang_fr .nhome .nlink {background-position:-78px 0}
+.lang_fr .nsmartphones {width:116px;background-position:50% -37px}
+.lang_fr .nphablets {width:92px;background-position:50% -73px}
+.lang_fr .ntablets {width:85px;background-position:50% -109px}
+.lang_fr .naccessories {width:105px;background-position:50% -145px}
+.lang_fr .nsmarthome {width:154px;background-position:50% -181px}
+.lang_fr .nlife {width:125px;background-position:50% -217px}
+.lang_fr .naction {width:63px;background-position:50% -253px}
+.lang_fr .nwork {width:111px;background-position:50% -289px}
+.lang_fr .ntop20 {width:67px;background-position:50% -325px}
+
+/* IT */
+.lang_it .nlink {background-image:url(/j/8a/images/core/nav/labels/it_10.png);background-position:50% 0}
+.lang_it .nhome .nlink {background-position:-78px 0}
+.lang_it .nsmartphones {width:134px;background-position:50% -37px}
+.lang_it .nphablets {width:94px;background-position:50% -73px}
+.lang_it .ntablets {width:84px;background-position:50% -109px}
+.lang_it .naccessories {width:107px;background-position:50% -145px}
+.lang_it .nsmarthome {width:110px;background-position:50% -181px}
+.lang_it .nlife {width:97px;background-position:50% -217px}
+.lang_it .naction {width:83px;background-position:50% -253px}
+.lang_it .nwork {width:121px;background-position:50% -289px}
+.lang_it .ntop20 {width:87px;background-position:50% -325px}
+
+/* NL */
+.lang_nl .nlink {background-image:url(/j/8a/images/core/nav/labels/nl_10.png);background-position:50% 0}
+.lang_nl .nhome .nlink {background-position:-78px 0}
+.lang_nl .nsmartphones {width:165px;background-position:50% -37px}
+.lang_nl .nphablets {width:91px;background-position:50% -73px}
+.lang_nl .ntablets {width:80px;background-position:50% -109px}
+.lang_nl .naccessories {width:115px;background-position:50% -145px}
+.lang_nl .nsmarthome {width:124px;background-position:50% -181px}
+.lang_nl .nlife {width:87px;background-position:50% -217px}
+.lang_nl .naction {width:66px;background-position:50% -253px}
+.lang_nl .nwork {width:113px;background-position:50% -289px}
+.lang_nl .ntop20 {width:77px;background-position:50% -325px}
+
+/* DE */
+.lang_de .nlink {background-image:url(/j/8a/images/core/nav/labels/de_10.png);background-position:50% 0}
+.lang_de .nhome .nlink {background-position:-78px 0}
+.lang_de .nsmartphones {width:85px;background-position:50% -37px}
+.lang_de .nphablets {width:93px;background-position:50% -73px}
+.lang_de .ntablets {width:82px;background-position:50% -109px}
+.lang_de .naccessories {width:149px;background-position:50% -145px}
+.lang_de .nsmarthome {width:186px;background-position:50% -181px}
+.lang_de .nlife {width:87px;background-position:50% -217px}
+.lang_de .naction {width:75px;background-position:50% -253px}
+.lang_de .nwork {width:82px;background-position:50% -289px}
+.lang_de .ntop20 {width:79px;background-position:50% -325px}
+
+/* ES */
+.lang_es .nlink {background-image:url(/j/8a/images/core/nav/labels/es_10.png);background-position:50% 0}
+.lang_es .nhome .nlink {background-position:-78px 0}
+.lang_es .nsmartphones {width:128px;background-position:50% -37px}
+.lang_es .nphablets {width:91px;background-position:50% -73px}
+.lang_es .ntablets {width:97px;background-position:50% -109px}
+.lang_es .naccessories {width:106px;background-position:50% -145px}
+.lang_es .nsmarthome {width:122px;background-position:50% -181px}
+.lang_es .nlife {width:85px;background-position:50% -217px}
+.lang_es .naction {width:101px;background-position:50% -253px}
+.lang_es .nwork {width:111px;background-position:50% -289px}
+.lang_es .ntop20 {width:77px;background-position:50% -325px}
+
+/* SE */
+.lang_se .nlink {background-image:url(/j/8a/images/core/nav/labels/se_10.png);background-position:50% 0}
+.lang_se .nhome .nlink {background-position:-78px 0}
+.lang_se .nsmartphones {width:134px;background-position:50% -37px}
+.lang_se .nphablets {width:97px;background-position:50% -73px}
+.lang_se .ntablets {width:115px;background-position:50% -109px}
+.lang_se .naccessories {width:101px;background-position:50% -145px}
+.lang_se .nsmarthome {width:123px;background-position:50% -181px}
+.lang_se .nlife {width:93px;background-position:50% -217px}
+.lang_se .naction {width:81px;background-position:50% -253px}
+.lang_se .nwork {width:90px;background-position:50% -289px}
+.lang_se .ntop20 {width:84px;background-position:50% -325px}
+
+/* PT */
+.lang_pt .nlink {background-image:url(/j/8a/images/core/nav/labels/pt_10.png);background-position:50% 0}
+.lang_pt .nhome .nlink {background-position:-78px 0}
+.lang_pt .nsmartphones {width:130px;background-position:50% -37px}
+.lang_pt .nphablets {width:93px;background-position:50% -73px}
+.lang_pt .ntablets {width:108px;background-position:50% -109px}
+.lang_pt .naccessories {width:108px;background-position:50% -145px}
+.lang_pt .nsmarthome {width:124px;background-position:50% -181px}
+.lang_pt .nlife {width:87px;background-position:50% -217px}
+.lang_pt .naction {width:76px;background-position:50% -253px}
+.lang_pt .nwork {width:113px;background-position:50% -289px}
+.lang_pt .ntop20 {width:79px;background-position:50% -325px}
+
+/* FI */
+.lang_fi .nlink {background-image:url(/j/8a/images/core/nav/labels/fi_10.png);background-position:50% 0}
+.lang_fi .nhome .nlink {background-position:-78px 0}
+.lang_fi .nsmartphones {width:102px;background-position:50% -37px}
+.lang_fi .nphablets {width:89px;background-position:50% -73px}
+.lang_fi .ntablets {width:153px;background-position:50% -109px}
+.lang_fi .naccessories {width:129px;background-position:50% -145px}
+.lang_fi .nsmarthome {width:122px;background-position:50% -181px}
+.lang_fi .nlife {width:51px;background-position:50% -217px}
+.lang_fi .naction {width:73px;background-position:50% -253px}
+.lang_fi .nwork {width:122px;background-position:50% -289px}
+.lang_fi .ntop20 {width:77px;background-position:50% -325px}
+
+/* GR */
+.lang_gr .nlink {background-image:url(/j/8a/images/core/nav/labels/gr_10.png);background-position:50% 0}
+.lang_gr .nhome .nlink {background-position:-78px 0}
+.lang_gr .nsmartphones {width:112px;background-position:50% -37px}
+.lang_gr .nphablets {width:93px;background-position:50% -73px}
+.lang_gr .ntablets {width:106px;background-position:50% -109px}
+.lang_gr .naccessories {width:103px;background-position:50% -145px}
+.lang_gr .nsmarthome {width:122px;background-position:50% -181px}
+.lang_gr .nlife {width:91px;background-position:50% -217px}
+.lang_gr .naction {width:80px;background-position:50% -253px}
+.lang_gr .nwork {width:131px;background-position:50% -289px}
+.lang_gr .ntop20 {width:80px;background-position:50% -325px}
+
+/* HU */
+.lang_hu .nlink {background-image:url(/j/8a/images/core/nav/labels/hu_10.png);background-position:50% 0}
+.lang_hu .nhome .nlink {background-position:-78px 0}
+.lang_hu .nsmartphones {width:114px;background-position:50% -37px}
+.lang_hu .nphablets {width:78px;background-position:50% -73px}
+.lang_hu .ntablets {width:68px;background-position:50% -109px}
+.lang_hu .naccessories {width:104px;background-position:50% -145px}
+.lang_hu .nsmarthome {width:150px;background-position:50% -181px}
+.lang_hu .nlife {width:83px;background-position:50% -217px}
+.lang_hu .naction {width:64px;background-position:50% -253px}
+.lang_hu .nwork {width:152px;background-position:50% -289px}
+.lang_hu .ntop20 {width:105px;background-position:50% -325px}
+
+/* -= Dropdown nav =- */
+#nav-v2 .menu {display:none}
+#nav-v2 .menu {position:absolute;top:40px;width:233px;margin-left:-12px;padding-top:4px;background:#001722;border-radius:4px;box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);z-index:100}
+#nav-v2 .marrow {position:absolute;top:-19px;left:10px;margin-left:10px;content:" ";width:28px;height:19px;background:url(/j/8a/images/core/nav/menu_arrow.png) no-repeat 0 0;pointer-events:none}
+#nav-v2 .m2x {width:482px} /* double width */
+#nav-v2 .mcol {float:left;width:233px;margin-right:16px;text-shadow:0 1px 0 rgba(0,0,0,.2)}
+#nav-v2 .last {margin-right:0}
+#nav-v2 .mtitle {margin:4px 6px 2px 0;padding:0 8px 7px 10px;font-size:16px;font-weight:normal;border-bottom:3px dotted #5e6a71;color:#fff}
+#nav-v2 .mtitle {font-size:12px;font-weight:bold}
+#nav-v2 .mlist {margin:6px 8px 12px 0}
+#nav-v2 .mlist li {font-size:12px}
+#nav-v2 .mlist a {position:relative;display:block;margin:0 0 0 6px;padding:2px 0 2px 4px;color:#fff;text-decoration:none;white-space:nowrap;overflow:hidden;color:#fff}
+#nav-v2 .mlist a:after {position:absolute;top:0;right:0;bottom:0;width:14px;content:" ";background:url(/j/8a/images/core/nav/item_fade.png) repeat-y 100% 0;pointer-events:none}
+#nav-v2 .mlist a:hover {text-decoration:underline}
+#nav-v2 .mlist-l2 {list-style:square;padding-left:24px;color:#5e6a71}
+#nav-v2 .mlist-l2 li {margin:2px 0}
+#nav-v2 .mlist-l2 a {padding:0;margin-left:0}
+/* ---- end nav v2 ---- */
+
+/*stores bar*/
+#stores {position:relative;margin:12px 0;width:980px;height:36px;overflow:hidden;background-color:#f2f4f5;background-position:0 -109px;background-repeat:repeat-x;line-height:0}
+#stores ul {margin:0;padding:0;list-style:none;font-size:0;text-align:center}
+#stores li {display:inline-block;margin:0;height:36px;border-right:2px solid #fff;text-indent:150%;white-space:nowrap;overflow:hidden;font-size:12px;background-color:#f2f4f5;transition:background-color .25s ease-out}
+#stores li:hover {background-color:#fff}
+#stores a {display:block;height:36px}
+#stores .sb_last {border:none}
+
+/*UK*/
+#region_uk #stores {border-radius:0}
+.sb_region1 li {padding:0 7px;background:url(/j/8a/images/stores/region1_11.png) repeat-x 50% 0}
+.sb_region1 .sb_htc {width:52px;background-position:50% 9px}
+.sb_region1 .sb_seagate {width:100px;background-position:50% -94px}
+.sb_region1 .sb_nokia {width:74px;background-position:50% -138px}
+.sb_region1 .sb_apple {width:50px;background-position:50% -191px}
+.sb_region1 .sb_samsung {width:74px;background-position:50% -244px}
+.sb_region1 .sb_blackberry {width:102px;background-position:50% -290px}
+.sb_region1 .sb_sony {width:71px;background-position:50% -339px}
+.sb_region1 .sb_lg {width:51px;background-position:50% -394px}
+.sb_region1 .sb_thuraya  {width:100px;background-position:50% -441px}
+.sb_region1 .sb_dji {width:42px;background-position:50% -489px}
+.sb_region1 .sb_gopro {width:88px;background-position:50% -39px}
+
+/*USA/MX*/
+.sb_region2 li {padding:0 9px;background:url(/j/8a/images/stores/region2_03.png) repeat-x 50% 0}
+.sb_region2 .sb_android {width:66px;background-position:50% 10px}
+.sb_region2 .sb_asus {width:73px;background-position:50% -33px}
+.sb_region2 .sb_parrot {width:64px;background-position:50% -79px}
+.sb_region2 .sb_windows {width:92px;background-position:50% -127px}
+.sb_region2 .sb_blackberry {width:102px;background-position:50% -175px}
+.sb_region2 .sb_samsung {width:74px;background-position:50% -227px}
+.sb_region2 .sb_htc {width:56px;background-position:50% -280px}
+.sb_region2 .sb_motorola {width:74px;background-position:50% -325px}
+.sb_region2 .sb_lg {width:51px;background-position:50% -373px}
+.sb_region2 .sb_dji {width:42px;background-position:50% -426px}
+.sb_region2 .sb_acer {width:60px;background-position:50% -473px}
+
+/*EU*/
+.sb_region5 li {padding:0 7px;background:url(/j/8a/images/stores/region5_10.png) repeat-x 50% 0}
+.sb_region5 .sb_nexus{width:122px;background-position:50% 2px}
+.sb_region5 .sb_android {width:88px;background-position:50% -42px}
+.sb_region5 .sb_thuraya {width:102px;background-position:50% -95px}
+.sb_region5 .sb_apple {width:58px;background-position:52% -144px}
+.sb_region5 .sb_htc {width:53px;background-position:50% -192px}
+.sb_region5 .sb_blackberry {width:97px;background-position:50% -242px}
+.sb_region5 .sb_samsung {width:77px;background-position:50% -288px}
+.sb_region5 .sb_sony {width:70px;background-position:50% -345px}
+.sb_region5 .sb_go-pro {width:101px;background-position:50% -400px}
+.sb_region5 .sb_dji{width:48px;background-position:50% -454px}
+
+/*asia*/
+.sb_region4 li {padding:0 14px;background:url(/j/8a/images/stores/region4_04.png) repeat-x 50% 0}
+.sb_region4 .sb_android {width:105px;background-position:50% 5px}
+.sb_region4 .sb_iphone {width:62px;background-position:50% -41px}
+.sb_region4 .sb_ipads {width:46px;background-position:50% -91px}
+.sb_region4 .sb_w8 {width:104px;background-position:50% -144px}
+.sb_region4 .sb_samsung {width:74px;background-position:50% -193px}
+.sb_region4 .sb_htc {width:60px;background-position:50% -243px}
+.sb_region4 .sb_se {width:73px;background-position:50% -292px}
+.sb_region4 .sb_nokia {width:79px;background-position:50% -339px}
+.sb_region4 .sb_cat {width:98px;background-position:50% -379px}
+
+/*HK*/
+.sb_region4_hk li {padding:0 12px;background:url(/j/8a/images/stores/region4_hk_03.png) repeat-x 50% 0}
+.sb_region4_hk .sb_android {width:76px;background-position:50% 2px}
+.sb_region4_hk .sb_apple {width:54px;background-position:50% -39px}
+.sb_region4_hk .sb_windows {width:88px;background-position:50% -79px}
+.sb_region4_hk .sb_blackberry {width:96px;background-position:50% -118px}
+.sb_region4_hk .sb_samsung {width:74px;background-position:50% -161px}
+.sb_region4_hk .sb_htc {width:64px;background-position:50% -201px}
+.sb_region4_hk .sb_se {width:70px;background-position:50% -240px}
+.sb_region4_hk .sb_dji {width:52px;background-position:50% -284px}
+.sb_region4_hk .sb_yotaphone {width:89px;background-position:50% -327px}
+.sb_region4_hk .sb_zte {width:55px;background-position:50% -372px}
+
+/*SG/MY*/
+.sb_region4_sg_my li {padding:0 12px;background:url(/j/8a/images/stores/region4_sg_my.png) repeat-x 50% 0}
+.sb_region4_sg_my .sb_parrot {width:72px;background-position:50% 2px}
+.sb_region4_sg_my .sb_apple {width:50px;background-position:50% -39px}
+.sb_region4_sg_my .sb_windows {width:88px;background-position:50% -79px}
+.sb_region4_sg_my .sb_blackberry {width:96px;background-position:50% -118px}
+.sb_region4_sg_my .sb_samsung {width:74px;background-position:50% -161px}
+.sb_region4_sg_my .sb_htc {width:60px;background-position:50% -201px}
+.sb_region4_sg_my .sb_se {width:71px;background-position:50% -240px}
+.sb_region4_sg_my .sb_dji {width:44px;background-position:50% -284px}
+.sb_region4_sg_my .sb_nokia {width:74px;background-position:50% -327px}
+.sb_region4_sg_my .sb_yotaphone {width:86px;background-position:50% -364px}
+
+/* AU/NZ */
+.sb_region4_au_nz li {padding:0 10px;background:url(/j/8a/images/stores/region4_au_nz.png) repeat-x 50% 0}
+.sb_region4_au_nz .sb_android {width:86px;background-position:50% 2px}
+.sb_region4_au_nz .sb_apple {width:50px;background-position:50% -39px}
+.sb_region4_au_nz .sb_windows {width:92px;background-position:50% -79px}
+.sb_region4_au_nz .sb_blackberry {width:104px;background-position:50% -118px}
+.sb_region4_au_nz .sb_samsung {width:74px;background-position:50% -161px}
+.sb_region4_au_nz .sb_htc {width:60px;background-position:50% -201px}
+.sb_region4_au_nz .sb_se {width:73px;background-position:50% -240px}
+.sb_region4_au_nz .sb_dji {width:44px;background-position:50% -284px}
+.sb_region4_au_nz .sb_nokia {width:79px;background-position:50% -327px}
+.sb_region4_au_nz .sb_yotaphone {width:98px;background-position:50% -364px}
+
+/*TW*/
+.sb_region4_tw li {padding:0 12px;background:url(/j/8a/images/stores/region4_tw_02.png) repeat-x 50% 0}
+.sb_region4_tw .sb_android {width:72px;background-position:50% 2px}
+.sb_region4_tw .sb_apple {width:50px;background-position:50% -39px}
+.sb_region4_tw .sb_windows {width:88px;background-position:50% -79px}
+.sb_region4_tw .sb_blackberry {width:94px;background-position:50% -118px}
+.sb_region4_tw .sb_samsung {width:74px;background-position:50% -161px}
+.sb_region4_tw .sb_htc {width:60px;background-position:50% -201px}
+.sb_region4_tw .sb_se {width:67px;background-position:50% -240px}
+.sb_region4_tw .sb_dji {width:44px;background-position:50% -284px}
+.sb_region4_tw .sb_parrot {width:81px;background-position:50% -327px}
+.sb_region4_tw .sb_yotaphone {width:84px;background-position:50% -372px}
+
+/*CN*/
+.sb_region4_cn li {padding:0 12px;background:url(/j/8a/images/stores/region4_cn.png) repeat-x 50% 0}
+.sb_region4_cn .sb_android {width:80px;background-position:50% 2px}
+.sb_region4_cn .sb_apple {width:50px;background-position:50% -39px}
+.sb_region4_cn .sb_windows {width:88px;background-position:50% -79px}
+.sb_region4_cn .sb_blackberry {width:90px;background-position:50% -118px}
+.sb_region4_cn .sb_samsung {width:70px;background-position:50% -161px}
+.sb_region4_cn .sb_htc {width:60px;background-position:50% -201px}
+.sb_region4_cn .sb_se {width:63px;background-position:50% -240px}
+.sb_region4_cn .sb_nexus {width:100px;background-position:50% -284px}
+.sb_region4_cn .sb_tdk {width:71px;background-position:50% -327px}
+.sb_region4_cn .sb_cat {width:44px;background-position:50% -372px}
+
+/*JP*/
+.sb_region4_jp li {padding:0 8px;background:url(/j/8a/images/stores/region4_jp_01.png) repeat-x 50% 0}
+.sb_region4_jp .sb_android {width:86px;background-position:50% 2px}
+.sb_region4_jp .sb_apple {width:50px;background-position:50% -39px}
+.sb_region4_jp .sb_windows {width:92px;background-position:50% -79px}
+.sb_region4_jp .sb_blackberry {width:104px;background-position:50% -118px}
+.sb_region4_jp .sb_samsung {width:74px;background-position:50% -161px}
+.sb_region4_jp .sb_htc {width:54px;background-position:50% -202px}
+.sb_region4_jp .sb_se {width:73px;background-position:50% -240px}
+.sb_region4_jp .sb_zte {width:28px;background-position:50% -283px}
+.sb_region4_jp .sb_dji {width:42px;background-position:50% -326px}
+.sb_region4_jp .sb_yotaphone {width:98px;background-position:50% -365px}
+.sb_region4_jp .sb_asus {width:74px;background-position:50% -397px}
+
+/*IN/EG/QA/SA/AE*/
+.sb_region6 li {padding:0 12px;background:url(/j/8a/images/stores/region6_01.png) repeat-x 50% 0}
+.sb_region6 .sb_android {width:86px;background-position:50% 12px}
+.sb_region6 .sb_apple {width:50px;background-position:50% -29px}
+.sb_region6 .sb_windows {width:92px;background-position:50% -69px}
+.sb_region6 .sb_blackberry {width:104px;background-position:50% -108px}
+.sb_region6 .sb_samsung {width:74px;background-position:50% -151px}
+.sb_region6 .sb_htc {width:60px;background-position:50% -191px}
+.sb_region6 .sb_se {width:73px;background-position:50% -230px}
+.sb_region6 .sb_zte {width:44px;background-position:50% -274px}
+.sb_region6 .sb_nokia {width:79px;background-position:50% -317px}
+.sb_region6 .sb_cat {width:48px;background-position:50% -362px}
+
+/* rest of AP (YotaPhone) */
+.sb_region6b li {padding:0 10px;background:url(/j/8a/images/stores/region6b.png) repeat-x 50% 0}
+.sb_region6b .sb_android {width:86px;background-position:50% 12px}
+.sb_region6b .sb_apple {width:50px;background-position:50% -29px}
+.sb_region6b .sb_windows {width:92px;background-position:50% -69px}
+.sb_region6b .sb_blackberry {width:104px;background-position:50% -108px}
+.sb_region6b .sb_samsung {width:74px;background-position:50% -151px}
+.sb_region6b .sb_htc {width:60px;background-position:50% -191px}
+.sb_region6b .sb_se {width:73px;background-position:50% -230px}
+.sb_region6b .sb_zte {width:44px;background-position:50% -274px}
+.sb_region6b .sb_nokia {width:79px;background-position:50% -317px}
+.sb_region6b .sb_yotaphone {width:98px;background-position:50% -354px}
+
+
+/* other */
+.sb_region0 li {padding:0 11px;background:url(/j/8a/images/stores/region0_01.png) repeat-x 50% 0}
+.sb_region0 .sb_iphone {width:62px;background-position:50% 8px}
+.sb_region0 .sb_ipads {width:50px;background-position:50% -42px}
+.sb_region0 .sb_android {width:105px;background-position:50% -95px}
+.sb_region0 .sb_wp {width:84px;background-position:50% -144px}
+.sb_region0 .sb_htc {width:60px;background-position:50% -193px}
+.sb_region0 .sb_samsung {width:84px;background-position:50% -246px}
+.sb_region0 .sb_motorola {width:122px;background-position:50% -293px}
+.sb_region0 .sb_nokia {width:79px;background-position:50% -338px}
+.sb_region0 .sb_blackberry {width:110px;background-position:50% -391px}
+
+/* Columns */
+#columns_2up {padding:0 0 0 233px}
+#columns_2up #content,#columns_2up #left {position:relative;float:left}
+#columns_2up #content {width:731px;margin:0 16px}
+#columns_2up #left {right:233px;width:233px;margin:0 0 0 -763px}
+#columns_2up:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+
+/* basic menus */
+#left ul {margin:0 0 12px;padding:0;list-style:none}
+#left h4 {margin:0;padding:6px;font-size:13px;line-height:16px;text-align:left;color:#001722;border-bottom:2px solid #e4e9ec}
+
+/* left */
+#left .menu h4 a {color:#001722;text-decoration:none}
+#left .menu h4 a:hover {text-decoration:underline}
+#left .menu li {font-size:13px;line-height:16px}
+#left .item a {display:block;margin:0;padding:4px 8px;color:#001722;text-decoration:none}
+#left .item a:hover {text-decoration:underline}
+#left .menu a small {font-size:10px;color:#aaa}
+
+/* 2nd level */
+#left .level2 {margin:0 12px;padding:4px 8px;border-left:2px solid #e4e9ec;background:#fff}
+#left .level2 li {border:none}
+#left .level2 a {padding:2px 0;font-size:11px}
+#left .current_cat > a {font-weight:bold}
+#left .more strong {display:block;margin:7px 0;padding:5px 0 14px;font-size:11px;text-align:center;background:#eee url(/j/8a/images/pages/category/more_bar.png) no-repeat 0 0}
+#left .less strong {margin:0 0 14px;padding:13px 0 7px;background:#eee url(/j/8a/images/pages/category/less_bar.png) no-repeat 0 0}
+#left .more a {cursor:pointer}
+
+/* Generic / shared styles */
+h1,h2 {color:#5f6a72;text-shadow:0 0 1px rgba(0,0,0,.01)}
+h1 {margin:15px 0 24px;font-size:32px;line-height:28px;font-weight:normal;letter-spacing:-2px;background:url(/j/8a/images/pages/product/title_bg.png) no-repeat 100% 100%}
+h1 small {font-size:13px;line-height:11px;letter-spacing:0;xcolor:#a5acb0}
+h2 {margin:12px 0;font-size:26px;line-height:23px;font-weight:bold;letter-spacing:-1px}
+
+/* Breadcrumbs */
+#breadcrumbs {margin:0 0 12px;padding:0 0 12px;list-style:none;color:#fff;border-bottom:1px dotted #ddd}
+#breadcrumbs li {position:relative;display:inline;padding:0 2px 0 4px;color:#89949a;font-size:13px;line-height:11px}
+#breadcrumbs a {padding-right:12px;color:#5f6a72;text-decoration:none;background:url(/j/8a/images/core/breadcrumbs/arrow.png) no-repeat 100% 55%}
+#breadcrumbs a:hover {color:#001722;text-decoration:underline}
+#region_tw #breadcrumbs li {font-size:15px;line-height:16px}
+#region_tw #breadcrumbs em {font-style:normal}
+
+/* -= Footer / Copyright =- */
+#footer_wrap {margin-top:10px;padding:40px 0;clear:both;background-position:50% 0}
+#footer_wrap:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+
+#footer {width:980px;margin:0 auto}
+#footer h3 {margin:0;padding:0;font-size:13px;line-height:32px;font-weight:bold;text-align:center;color:#fff;background:#a5acb0;text-shadow:0 -1px 0 rgba(0,0,0,.2);text-transform:uppercase}
+#footer .c1 h3 a {color:#fff;text-decoration:none}
+#footer .c1 h3 a:hover {text-decoration:underline}
+#footer .col {float:left;margin-right:16px;width:316px}
+#footer .content {height:138px;padding:4px 12px;font-size:11px;color:#5f6a72;text-transform:uppercase}
+#footer small {display:block;font-size:10px;line-height:12px;color:#aaa}
+#footer ul {margin:0;padding:0;list-style:none}
+#footer li {margin:6px 0}
+#footer a {color:#5f6a72;text-decoration:none}
+#footer a:hover {color:#001722;text-decoration:underline}
+#footer .c1 a {font-weight:bold;text-decoration:underline}
+#footer .c2 ul {float:left;width:50%}
+#footer .c2 li {padding-right:4px}
+#footer .c3 {margin-right:0}
+#footer .c3 li {float:left;width:48%;margin:4px 0;padding-right:2%}
+#footer .c3 img {border:1px solid #fff;margin-right:3px;vertical-align:-1px;-moz-box-shadow:0 1px 2px rgba(0,0,0,.25);-webkit-box-shadow:0 1px 2px rgba(0,0,0,.25);box-shadow:0 1px 2px rgba(0,0,0,.25)}
+#footer .copy {margin-top:10px;color:#aaa;text-transform:none}
+#footer .sales_number {font-size:14px}
+#footer .asterisk {margin-top:10px;color:#aaa;text-transform:none}
+
+/*flags*/
+.ft_r i {float:left;width:16px;height:11px;border:1px solid #fff;margin:2px 6px 0 0;background:url(/j/shared/images/flags_small/flag-sprite_02.png) no-repeat 0 11px;-moz-box-shadow:0 1px 2px rgba(0,0,0,.25);-webkit-box-shadow:0 1px 2px rgba(0,0,0,.25);box-shadow:0 1px 2px rgba(0,0,0,.25)}
+.ft_r .au {background-position:0 0}
+.ft_r .ca {background-position:0 -11px}
+.ft_r .sg {background-position:0 -22px}
+.ft_r .de {background-position:0 -33px}
+.ft_r .es {background-position:0 -44px}
+.ft_r .fr {background-position:0 -55px}
+.ft_r .hk {background-position:0 -66px}
+.ft_r .ie {background-position:0 -77px}
+.ft_r .it {background-position:0 -88px}
+.ft_r .jp {background-position:0 -99px}
+.ft_r .kr {background-position:0 -110px}
+.ft_r .nl {background-position:0 -121px}
+#footer .ft_r .tw {background-position:0 -132px} /*hack*/
+.ft_r .us {background-position:0 -143px}
+.ft_r .uk {background-position:0 -154px}
+.ft_r .pt {background-position:0 -165px}
+.ft_r .mx {background-position:0 -176px}
+.ft_r .my {background-position:0 -187px}
+.ft_r .cn {background-position:0 -198px}
+
+/*social icons*/
+#footer .social {margin-left:-1px}
+#footer .social .icon {display:inline-block;width:30px;height:30px;overflow:hidden;margin:6px 5px 4px 0;padding:0;line-height:999em;vertical-align:-11px}
+#footer .social a {padding:0 6px 0 0}
+
+/* footer newsletter form */
+#footer .footerSignup {position:relative}
+#footer .nl_signup_button {position:relative;display:block;margin:12px 0 20px;padding:8px 8px 8px 60px;background-color:#a5acb0;background-position:0 -159px;color:#fff;text-transform:none;text-decoration:none !important;font-size:14px;text-shadow:0 -1px 0 rgba(0,0,0,.3);border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+#footer .nl_signup_button:hover {background-color:#818a8e;color:#fff}
+#footer .nl_signup_button.active {background-color:#001722}
+#footer .nl_signup_button .icon {position:absolute;top:0;left:6px;width:37px;height:44px;background:url(/j/8a/images/core/core-sprite.png) no-repeat -355px 0}
+#footer .nl_signup_button {-moz-transition:0.35s ease-out;-webkit-transition:0.35s ease-out;-o-transition:0.35s ease-out;transition:0.35s ease-out}
+
+#signup_wrap,#footerSignupForm .text,#footerSignupForm .submit {background-image:url(/j/8a/images/core/footer/newsletter_bgs.png);background-repeat:repeat-x 0 0}
+#signup_wrap {display:none;position:absolute;bottom:40px;left:0;width:632px;background-color:#001722;background-position:0 0;text-transform:none;color:#fff;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,.2)}
+#signup_wrap h4 {position:relative;margin:0;padding:8px;font-size:18px;line-height:22px;text-align:center;border-bottom:1px solid #d0d6d9}
+#signup_wrap .close {position:absolute;top:9px;right:10px;width:20px;height:20px;background:url(/j/8a/images/core/nav/menu_close.png) no-repeat 0 0;cursor:pointer}
+#signup_wrap .unsub {margin:12px 0 8px;text-align:center;font-weight:bold}
+#footerSignupForm {margin:0;padding:0 16px 6px 16px}
+#footerSignupForm ul {margin:0;padding:0}
+#footerSignupForm li {position:relative;margin:0;padding:4px 0;clear:both}
+#footerSignupForm strong {font-size:15px;font-weight:bold}
+#footerSignupForm fieldset {border:none;margin:0;padding:0}
+#footerSignupForm label {float:left;width:110px;padding:8px 16px 0 0;text-align:right;font-size:11px;line-height:13px;font-weight:bold}
+#footerSignupForm strong.error {display:none !important}
+#footerSignupForm .text {width:236px;padding:5px;border:2px solid #a5acb0;color:#444;background-color:#fff;background-position:0 -500px;border-radius:6px}
+#footerSignupForm .text:focus {border-color:#0098db;color:#0098db;background:#f3fafd}
+#footerSignupForm .submit {position:absolute;top:6px;right:0;width:200px;padding:4px 10px;border:none;background:#0098db url(/j/8a/images/core/footer/newsletter_grad.png) repeat-x 0 0;color:#fff;font-family:verdana,sans-serif;font-weight:bold;font-size:14px;text-align:center;cursor:pointer;text-shadow:0 -1px 0 rgba(0,0,0,.3);border-radius:6px}
+#footerSignupForm .submit:hover {background-color:#58a618}
+#footerSignupForm .submit {-moz-transition:0.35s ease-out;-webkit-transition:0.35s ease-out;-o-transition:0.35s ease-out;transition:0.35s ease-out}
+#footerSignupForm .terms {margin:8px 0 6px;font-size:10px;line-height:13px;color:#a6afb3}
+#footerSignupForm input.input-error {border-color:#f00;background:#fff9f9} 
+
+/*regional tweaks*/
+#region_tw #footer h3 {padding:6px;font-size:20px;line-height:20px}
+#region_tw #footer .c2 .content {font-size:16px}
+#region_th #footer h3 {padding:3px 6px;font-size:16px}
+#region_th #footer .c2 .content {font-size:14px}
+
+/*secondary price styling*/
+.twdprice,.cnprice,.thPrice {display:block;margin-top:2px;font-weight:normal;font-size:12px;color:#56A61D !important;white-space:nowrap} 
+.twdprice strong,.cnprice strong,.thPrice strong {font-size:12px !important}
+.gst_help {margin-left:5px;font-weight:normal;font-size:11px;color:#a5acb0;white-space:nowrap;text-decoration:none}
+
+/* gst pop-ups */
+.gst_content {display:none}
+#gst {width:750px;margin:6px}
+#gst h4 {font-size:18px;margin:0}
+#gst p {font-weight:bold;margin:12px 0 0;line-height:18px}
+
+#closeableCountryWarning {position:relative;width:870px;margin:16px 0;padding:8px 100px 8px 10px;background:#d8edca;color:#275904;font-size:11px;-moz-border-radius:4px;border-radius:4px}
+#closeableCountryWarning a {font-weight:bold;color:#275904}
+#regionCloseLink {position:absolute;right:0;top:0;bottom:0;padding:8px 34px 8px 10px;font-weight:bold;color:#fff !important;font-size:11px;background:#56a51d url(/j/8a/images/core/nag/close_bg_01.png) no-repeat 100% -44px;text-decoration:none;cursor:pointer;-moz-border-radius-topright:4px;-moz-border-radius-bottomright:4px;border-top-right-radius:4px;border-bottom-right-radius:4px}
+#regionCloseLink:hover {text-decoration:underline}
+
+.eu-promo,.trust {margin:12px 0}
+
+div.note {background:#0098db}
+div.error {background:#c00;font-weight:bold} /*quick fix - need new class for msgbar error */
+.msgbar {position:fixed;top:0;left:0;width:100%;padding:14px 0;text-align:center;color:#fff;z-index:9999;box-shadow:0 0 8px rgba(0,0,0,.4)}
