@@ -5,8 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Account</title>
-</head>
+
 <link rel="stylesheet" href="resources/css/bootstrap.css" />
+<script src="resources/js/bootstrap.js"></script>
+<script src="resources/js/jquery-1.8.0.js"></script>
 <style>
 .glyphicon {
 	margin-right: 5px;
@@ -124,6 +126,7 @@ html,body {
 
 }
 </style>
+</head>
 <body>
 	<div class="container">
 		<header> <%@include file="template/header.jsp"%>

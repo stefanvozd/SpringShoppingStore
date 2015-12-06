@@ -5,8 +5,30 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Account</title>
-</head>
+
 <link rel="stylesheet" href="resources/css/bootstrap.css" />
+<script src="resources/js/bootstrap.js"></script>
+<script src="resources/js/jquery-1.8.0.js"></script>
+<link href="resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="resources/css/prettyPhoto.css" rel="stylesheet">
+<link href="resources/css/price-range.css" rel="stylesheet">
+<link href="resources/css/animate.css" rel="stylesheet">
+<link href="resources/css/main.css" rel="stylesheet">
+<link href="resources/css/responsive.css" rel="stylesheet">
+<!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+<link rel="shortcut icon" href="images/ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+	href="resources/images/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"
+	href="resources/images/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+	href="resources/images/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed"
+	href="resources/images/ico/apple-touch-icon-57-precomposed.png">
+</head>
 <style>
 .glyphicon {
 	margin-right: 5px;
@@ -124,19 +146,22 @@ html,body {
 
 }
 </style>
+</head>
 <body>
 	<div class="container">
 		<header> <%@include file="template/header.jsp"%>
 		</header>
 		<section id="main">
 		<div class="row">
-			<div class="col-sm-2">
+			<div class="col-sm-3">
 				<nav class="nav-sidebar nav-pills nav-stacked">
 				<ul class="nav tabs">
 					<li class="active"><a href="account" data-toggle="tab"><i
 							class="fa fa-home fa-fw"></i>My Account</a></a></li>
 					<li class=""><a href="orderHistory" data-toggle="tab"><i
 							class="fa fa-list-alt fa-fw"></i>My Orders</a></li>
+					<li class=""><a href="myProductList" data-toggle="tab"><i
+							class="fa fa-list-alt fa-fw"></i>My Products List</a></li>
 					<li class=""><a href="wishlist" data-toggle="tab"><i
 							class="fa fa-file-o fa-fw"></i>Wishlist</a></li>
 					<li class=""><a href="change-password" data-toggle="tab"><i
@@ -158,6 +183,13 @@ html,body {
 		</section>
 		<footer> <%@include file="template/footer.jsp"%>
 		</footer>
+		
+		<script src="resources/js/jquery.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
+	<script src="resources/js/jquery.scrollUp.min.js"></script>
+	<script src="resources/js/price-range.js"></script>
+	<script src="resources/js/jquery.prettyPhoto.js"></script>
+	<script src="resources/js/main.js"></script>
 	</div>
 </body>
 </html>

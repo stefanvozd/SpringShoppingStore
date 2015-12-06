@@ -107,7 +107,7 @@ public class OrderController {
 		List<OrderItemExtended> orderItemExtendedList = orderService.getAllOrdersForProduct(productId);
 		model.addAttribute("orderList", orderItemExtendedList);
 		model.addAttribute("page", "ordersHistoryList");
-		return "myProductList";
+		return "account";
 		
 	}
 

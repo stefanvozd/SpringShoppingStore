@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.spring.shopping.controller.constants.ControllerConstants;
 import com.spring.shopping.model.Category;
 import com.spring.shopping.model.Customer;
-import com.spring.shopping.model.Order;
 import com.spring.shopping.model.Product;
 import com.spring.shopping.model.ReviewForm;
 import com.spring.shopping.model.SubCategory;
@@ -120,7 +119,7 @@ public class ProductController {
 		
 		model.addAttribute("catProds", productList);
 		model.addAttribute("page", "myProductListBase");
-		return "myProductList";
+		return "account";
 		
 	}
 	
