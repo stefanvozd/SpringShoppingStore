@@ -75,7 +75,6 @@
 						</li>
 				
 				<li class="dropdown"><a href="#"><span id="cartIcon"><i
-
 						class="icon-shopping-cart icon-red"></i>
 						 <c:set var="cartItems" value="${cart.numberOfItems}" /> <span
 						class="headerCartItemsCount"> <c:choose>
@@ -148,34 +147,3 @@
      </div>
 </body>
 </html>
-
-
-<!-- 
-	<div class="navbar navbar-default">
-		<div class="navbar-header">
-			<button class="btn btn-success navbar-toggle">
-				<span class="glyphicon glyphicon-chevron-down"></span>
-			</button>
-			<c:url var="home" value="home" />
-			<div id="logo">
-				<a href="${home}"><img src="resources/logo.png" /></a>
-			</div>
-		</div>
-		<div class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-				<c:forEach var="categories" items="${categoryMap}">
-					<c:set var="category" value="${categories.key}" />
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button"><c:out
-								value="${category.categoryName}" /></a></li>
-					<ul class="dropdown-menu">
-						<c:forEach var="subCategory" items="${subCategoryList}">
-							<li><a tabindex="-1"><c:out
-										value="${subCategory.subCategoryName}" /></a></li>
-						</c:forEach>
-					</ul>
-				</c:forEach>
-			</ul>
-		</div>
-	</div>
- -->
