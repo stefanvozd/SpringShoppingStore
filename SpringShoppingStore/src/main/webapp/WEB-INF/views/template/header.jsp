@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="resources/css/bootstrap.css" />
+<script src="resources/js/bootstrap.js"></script>
 <style>
 .navbar-header {
 	padding: 2px;
@@ -61,10 +63,12 @@
 			</form>
 
 			<ul class="nav navbar-nav navbar-right">
-
+				<li class="dropdown">
+			    	<a data-title='register' href="#" data-toggle='modal' data-target='#register' data-whatever='@mdo' style='min-width: 123px;'><img src="http://www.mbills.si/favicon.ico"/>Generate HTML</a>
+			    </li>
 			
 				<li class="dropdown"><a href="/shopping/createnewproduct" class="dropdown-toggle"
-						data-toggle="dropdown" role="button">
+						 role="button">
 						<img src="resources/images/home/sell.png" width="20px"/>
 						<c:out	value="Sell" />
 						</a>
@@ -114,6 +118,34 @@
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container-fluid --> </nav>
+	<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="register" aria-hidden="true">
+      <div class="modal-dialog">
+       <div class="modal-content">
+        <div class="modal-header">
+         <span class="modal-title custom_align" id="Heading" style="font-size: 20px;font-weight: bold;">Generate HTML code</span>
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+        </div> 
+        <div style="text-align: justify; text-justify: inter-word;" class="modal-body">
+         <p>Welcome to <b>Hal mBill</b> payments!<br>This is page
+         where you can find generated HTML code for your web site, if you want to implement
+         payments via mBills.<br><br>
+         You should copy the form text below to your web site. 
+         In the input tag with attribute <b>type="phoneNumber"</b> you should have
+         predefined value of you mobile number. In the input tag with attribute <b>type="amount"</b> you should implement total amount
+         of products calculated by user. Change amount from fixed 199.17 to your.
+         <br><br>
+         Click on <b>mBill</b> button should redirect user to our web site, where he will pay for it.</p>
+        </div>        
+        <div id="htmlCode" style="margin-right: 15px;margin-left: 15px;text-align: justify;text-justify: inter-word;" class="form-group">
+         <pre><xmp><form action="http://localhost:8080/shopping/paymentGateway" method="post">
+ <input type="text" name="amount" value="199.17" readonly>
+ <input type="hidden" name="phoneNumber" value="">
+ <input type="image" src="http://localhost:8080/shopping/resources/images/mbills.png" alt="Submit Form">
+</form></xmp></pre>
+        </div>
+       </div>
+      </div>
+     </div>
 </body>
 </html>
 
